@@ -74,6 +74,11 @@ body.apocryphon .video-wrapper {
   body.apocryphon .gallery {
     grid-template-columns: 1fr;
   }
-  background-color: cyan !important;
+
+  body.apocryphon {
+    background-image: none;
+    background-color: cyan !important;
+  }
+  
   
 }
