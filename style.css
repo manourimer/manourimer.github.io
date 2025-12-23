@@ -14,6 +14,7 @@ a {
   text-decoration: none;
 }
 
+
 /* =====================
    Hero
    ===================== */
@@ -31,6 +32,24 @@ a {
 .tagline {
   color: rgba(0,0,0,0.6);
   font-size: 18px;
+}
+.hero-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-title h1 {
+  margin: 0;
+}
+
+.hero-avatar {
+  max-width: 64px;       /* smaller next to title */
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* =====================
