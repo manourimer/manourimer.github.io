@@ -29,6 +29,7 @@ body.circus header {
 
 body.circus h1 {
   font-family: "Kalnia Glaze", serif;
+  color: yellow;
   font-size: 72px;
   letter-spacing: 1px;
   margin: 0 0 8px;
