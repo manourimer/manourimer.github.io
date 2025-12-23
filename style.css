@@ -1,52 +1,117 @@
-body {
+/* =====================
+   Global
+   ===================== */
+body.home {
   font-family: "IBM Plex Sans", sans-serif;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px;
-  line-height: 1.6;
+  color: rgba(0,0,0,0.9);
+  background: #fff;
+  margin: 0;
+  line-height: 1.7;
 }
 
-header {
-  margin-bottom: 80px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2em;
-}
-
-h2 {
-  margin-bottom: 40px;
-}
-
-.project {
-  margin-bottom: 60px;
-}
-
-footer {
-  margin-top: 100px;
-  font-size: 0.9rem;
-}
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+/* =====================
+   Hero
+   ===================== */
+.hero {
+  max-width: 900px;
+  margin: 80px auto 64px;
+  padding: 0 24px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  color: rgba(0,0,0,0.6);
+  font-size: 18px;
+}
+
+/* =====================
+   Sections
+   ===================== */
+.block {
+  max-width: 900px;
+  margin: 64px auto;
+  padding: 0 24px;
+}
+
+.block h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* =====================
+   Navigation grid
+   ===================== */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.nav-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 24px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.nav-card p {
+  color: rgba(0,0,0,0.65);
+  margin: 0;
+}
+
+.nav-card:hover {
+  background: rgba(0,0,0,0.03);
+  transform: translateY(-2px);
+}
+
+/* =====================
+   Quote / feature
+   ===================== */
+.feature blockquote {
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(0,0,0,0.65);
+  border-left: 3px solid rgba(0,0,0,0.15);
+  padding-left: 20px;
+}
+
+/* =====================
+   Footer
+   ===================== */
+.footer {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 0 24px;
+  color: rgba(0,0,0,0.6);
+}
+
+.footer a {
   text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
-a:hover {
-  opacity: 0.7;
-}
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  margin: 32px 0;
-}
+/* =====================
+   Mobile
+   ===================== */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 36px;
+  }
 
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
 }
