@@ -59,19 +59,20 @@ body.apocryphon .video-wrapper {
 
 /* Mobile */
 @media (max-width: 800px) {
-  body.circus {
+  body.apocryphon {
     padding: 28px 14px;
   }
 
-  body.circus h1 {
+  body.apocryphon h1 {
     font-size: 46px;
   }
 
-  body.circus h2 {
+  body.apocryphon h2 {
     font-size: 26px;
   }
 
-  body.circus .gallery {
+  body.apocryphon .gallery {
     grid-template-columns: 1fr;
   }
+  background-color: cyan;
 }
