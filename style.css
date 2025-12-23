@@ -66,6 +66,12 @@ a {
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
+.logos img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
 
 /* =====================
    Navigation grid
