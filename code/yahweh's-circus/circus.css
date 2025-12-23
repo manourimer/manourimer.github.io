@@ -28,7 +28,7 @@ body.circus header {
 }
 
 body.circus h1 {
-  font-family: "VT323", monospace;
+  font-family: "Kalnia Glaze", serif;
   font-size: 72px;
   letter-spacing: 1px;
   margin: 0 0 8px;
@@ -36,7 +36,7 @@ body.circus h1 {
 }
 
 body.circus h2 {
-  font-family: "VT323", monospace;
+  font-family: "Kalnia Glaze", serif;
   font-size: 34px;
   margin: 44px 0 12px;
   letter-spacing: 0.5px;
@@ -57,7 +57,7 @@ body.circus a:hover {
   border-bottom-color: rgba(255, 70, 190, 0.85);
 }
 
-/* Card-like sections for legibility */
+
 body.circus section {
   background: rgba(0,0,0,0.20);
   border: 1px solid rgba(255,255,255,0.10);
@@ -67,7 +67,7 @@ body.circus section {
   box-shadow: 0 18px 70px rgba(0,0,0,0.35);
 }
 
-/* Keep header unboxed */
+
 body.circus header {
   background: none;
   border: none;
@@ -97,7 +97,7 @@ body.circus .video-wrapper iframe {
   height: 100%;
 }
 
-/* Screenshot gallery */
+
 body.circus .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -124,7 +124,7 @@ body.circus ul, body.circus ol {
 }
 
 body.circus code {
-  font-family: "VT323", monospace;
+  font-family: "Kalnia Glaze", serif;
   font-size: 1.05em;
   padding: 0 6px;
   border: 1px solid rgba(255,255,255,0.14);
