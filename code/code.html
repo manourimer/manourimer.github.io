@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code — Manou Rimer</title>
 
+  <!-- fun monospace + optional display -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="code-style.css" />
+</head>
+
+<body class="codehub">
+  <header class="topbar">
+    <a class="back" href="index.html">← Home</a>
+    <div class="titlewrap">
+      <h1>CODE TERMINAL</h1>
+      <p class="subtitle">Select a build. Press <span class="kbd">ENTER</span> (click) to launch.</p>
+    </div>
+    <div class="status">
+      <span class="dot"></span> ONLINE
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel">
+      <div class="panel-head">
+        <span class="pill">/projects</span>
+        <span class="hint">3 entries</span>
+      </div>
+
+      <div class="grid">
+        <!-- 1) Interactive Apocryphon -->
+        <a class="card" href="projects/interactive-apocryphon.html">
+          <div class="thumb">
+            <!-- put your screenshot at images/apocryphon-thumb.png (or change path) -->
+            <img src="images/apocryphon-thumb.png" alt="The Apocryphon of John screenshot">
+          </div>
+          <div class="meta">
+            <h2>THE APOCRYPHON OF JOHN</h2>
+            <p>ChuGL · interactive audiovisual exposé · pixel cosmology</p>
+            <div class="tags">
+              <span class="tag">narrative</span>
+              <span class="tag">mini-games</span>
+              <span class="tag">audio-reactive</span>
+            </div>
+          </div>
+          <div class="launch">LAUNCH →</div>
+        </a>
+
+        <!-- 2) Yahweh's Circus -->
+        <a class="card" href="projects/yahwehs-circus.html">
+          <div class="thumb">
+            <img src="images/circus-thumb.png" alt="Yahweh's Circus screenshot">
+          </div>
+          <div class="meta">
+            <h2>YAHWEH’S CIRCUS</h2>
+            <p>Interactive world · surreal mechanics · myth-machine UI</p>
+            <div class="tags">
+              <span class="tag">3D</span>
+              <span class="tag">systems</span>
+              <span class="tag">surreal</span>
+            </div>
+          </div>
+          <div class="launch">LAUNCH →</div>
+        </a>
+
+        <!-- 3) Audio Angels -->
+        <a class="card" href="projects/audio-angels.html">
+          <div class="thumb">
+            <img src="images/angels-thumb.png" alt="Audio Angels screenshot">
+          </div>
+          <div class="meta">
+            <h2>AUDIO ANGELS</h2>
+            <p>Audiovisualizer · modes · “biblically accurate” signal bloom</p>
+            <div class="tags">
+              <span class="tag">visuals</span>
+              <span class="tag">sound</span>
+              <span class="tag">performance</span>
+            </div>
+          </div>
+          <div class="launch">LAUNCH →</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="foot">
+      <div class="cmd">
+        <span class="prompt">manou@site</span><span class="sep">:</span><span class="path">~/code</span><span class="sep">$</span>
+        <span class="cursor">█</span>
+      </div>
+      <div class="tiny">
+        Tip: keep filenames lowercase. GitHub Pages is case-sensitive.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
