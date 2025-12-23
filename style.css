@@ -34,9 +34,12 @@ a {
   font-size: 18px;
 }
 .hero-title {
+   max-width: 900px;
+  margin: 80px auto 64px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  
 }
 
 .hero-title h1 {
