@@ -29,7 +29,7 @@ body.circus header {
 }
 
 body.circus h1 {
-  font-family: "Kalnia Glaze", serif;
+  font-family: "Henny Penny", system-ui;
   color: lime !important;
   -webkit-text-fill-color: lime !important;
   background: none !important;
@@ -41,7 +41,7 @@ body.circus h1 {
 }
 
 body.circus h2 {
-  font-family: "Kalnia Glaze", serif;
+   font-family: "Henny Penny", system-ui;
    color: lime !important;
   -webkit-text-fill-color: lime !important;
   background: none !important;
@@ -134,7 +134,7 @@ body.circus ul, body.circus ol {
 }
 
 body.circus code {
-  font-family: "Kalnia Glaze", serif;
+  font-family: "Henny Penny", system-ui;
   font-size: 1.05em;
   padding: 0 6px;
   border: 1px solid rgba(255,255,255,0.14);
