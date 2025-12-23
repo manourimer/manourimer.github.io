@@ -30,7 +30,7 @@ body.circus header {
 
 body.circus h1 {
   font-family: "Kalnia Glaze", serif;
-  color: yellow;
+  color: lime !important;
   font-size: 72px;
   letter-spacing: 1px;
   margin: 0 0 8px;
@@ -39,7 +39,7 @@ body.circus h1 {
 
 body.circus h2 {
   font-family: "Kalnia Glaze", serif;
-   color: yellow;
+   color: lime !important;
   font-size: 34px;
   margin: 44px 0 12px;
   letter-spacing: 0.5px;
