@@ -37,7 +37,7 @@ body.circus h1 {
   font-size: 72px;
   letter-spacing: 1px;
   margin: 0 0 8px;
-  text-shadow: 0 0 18px rgba(255, 70, 190, 0.25);
+  text-shadow: none;
 }
 
 body.circus h2 {
@@ -49,6 +49,7 @@ body.circus h2 {
   font-size: 34px;
   margin: 44px 0 12px;
   letter-spacing: 0.5px;
+   text-shadow: none;
 }
 
 body.circus p {
