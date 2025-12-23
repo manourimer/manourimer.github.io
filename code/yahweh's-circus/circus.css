@@ -4,6 +4,7 @@
    ========================= */
 
 body.circus {
+   background: lime !important;
   color: rgba(255,255,255,0.92);
   background: #05050a;
 
