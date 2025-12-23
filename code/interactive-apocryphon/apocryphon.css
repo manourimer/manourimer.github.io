@@ -26,6 +26,7 @@ body.apocryphon h2,
 body.apocryphon h3 {
   font-family: "VT323", monospace;
   letter-spacing: 0.5px;
+  color: rgba(255,0,0, 1);
 }
 
 body.apocryphon h1 {
