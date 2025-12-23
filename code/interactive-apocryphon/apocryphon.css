@@ -57,28 +57,21 @@ body.apocryphon .video-wrapper {
   box-shadow: 0 0 0 6px rgba(0,0,0,0.25);
 }
 
-@media (max-width: 700px) {
-
-  body.apocryphon {
-    padding: 24px 16px;
-    font-size: 18px;
-    line-height: 1.6;
+/* Mobile */
+@media (max-width: 800px) {
+  body.circus {
+    padding: 28px 14px;
   }
 
-  body.apocryphon h1 {
-    font-size: 42px;
+  body.circus h1 {
+    font-size: 46px;
   }
 
-  body.apocryphon h2 {
+  body.circus h2 {
     font-size: 26px;
   }
 
-  body.apocryphon .gallery {
+  body.circus .gallery {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  body.apocryphon .video-wrapper {
-    margin: 16px 0 24px;
   }
 }
