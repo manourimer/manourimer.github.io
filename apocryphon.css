@@ -2,7 +2,8 @@ body.apocryphon {
   background-color: #07070a;
   background-image: url("./EDEN.png");
   background-repeat: no-repeat;       
-  background-size: cover;     
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;  
   
 
