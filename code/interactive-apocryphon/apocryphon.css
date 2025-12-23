@@ -19,7 +19,7 @@ body.apocryphon {
 @media (max-width: 900px) {
   body.apocryphon {
     background-attachment: scroll;
-    background-size: 128px 128px; 
+    background-size: cover; 
   }
 }
 
