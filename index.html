@@ -3,49 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <title>Manou Rimer</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <header>
+<body class="home">
+
+  <!-- HERO -->
+  <header class="hero">
     <h1>Manou Rimer</h1>
-    <p>Symbolic Systems, Creative Writing, and Human Computer Interaction</p>
+    <p class="tagline">
+      Symbolic Systems · Creative Writing · Human–Computer Interaction
+    </p>
+
+    <!-- optional: portrait / logo -->
+    <!--
+    <div class="hero-media">
+      <img src="images/portrait.jpg" alt="Manou Rimer">
+    </div>
+    -->
   </header>
 
-  <section id="about">
-    <h2>ABOUT ME</h2>
+  <!-- ABOUT -->
+  <section class="block">
+    <h2>About</h2>
 
-    <div>
-      
-      <p> Hi, my name is Manou (short for Manouchehr). I'm a current junior at Stanford majoring in Symbolic Systems (HCI track) and minoring in creative writing.
-      I'm very passionate about the intersection between technology and storytelling and how new tools can be used to elevate the stories people can tell. 
+    <p>
+      Hi, my name is Manou (short for Manouchehr). I’m a junior at Stanford majoring in
+      Symbolic Systems (HCI track) and minoring in Creative Writing.
+    </p>
+
+    <p>
+      I’m interested in the intersection of technology and storytelling—especially how
+      interactive systems, audiovisual tools, and interface design can create new
+      narrative forms.
+    </p>
+  </section>
+
+  <!-- FEATURED / NAV -->
+  <section class="block">
+    <h2>Work</h2>
+
+    <div class="nav-grid">
+      <a class="nav-card" href="code.html">
+        <h3>Code</h3>
+        <p>Interactive systems, audiovisual worlds, experiments.</p>
+      </a>
+
+      <a class="nav-card" href="#">
+        <h3>Film</h3>
+        <p>Short films, scripts, visual storytelling.</p>
+      </a>
+
+      <a class="nav-card" href="#">
+        <h3>Writing</h3>
+        <p>Fiction, essays, hybrid narrative work.</p>
+      </a>
+
+      <a class="nav-card" href="#">
+        <h3>Other</h3>
+        <p>Installations, research, miscellaneous projects.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- OPTIONAL FEATURE STRIP -->
+  <!--
+  <section class="block feature">
+    <blockquote>
+      “Technology is not neutral—it shapes the kinds of stories we are able to tell.”
+    </blockquote>
+  </section>
+  -->
+
+  <!-- LOGOS / AFFILIATIONS -->
+  <!--
+  <section class="block logos">
+    <img src="images/stanford.svg" alt="Stanford">
+    <img src="images/other-logo.svg" alt="Affiliation">
+  </section>
+  -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="contact">
+      <p>
+        <a href="mailto:manourimer@gmail.com">manourimer@gmail.com</a><br>
+        <a href="mailto:mrimer@stanford.edu">mrimer@stanford.edu</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/manourimer" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
       </p>
     </div>
-
-  </section>
-
-  <section id="projects">
-    <h2>Selected Projects</h2>
-
-    <div class="project">
-      <p> <a href="code/code.html"> CODE </a>
-      <p>&nbsp;</p>
-      <a href=""> FILMS </a>
-      <p>&nbsp;</p>
-      <a href=""> WRITING </a>
-      <p>&nbsp;</p>
-      <a href=""> OTHER </a>
-     </p>
-    </div>
-  </section>
-
-  <footer>
-    <p>
-      <p>manourimer@gmail.com</p> 
-      <p>mrimer@stanford.edu</p> 
-      <a href="https://github.com/manourimer">GitHub</a>
-    </p>
   </footer>
 
 </body>
