@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Film — Manou Rimer</title>
 
+  <!-- “Times New Roman vibes” with safe fallbacks -->
+  <link rel="stylesheet" href="film.css" />
+</head>
+
+<body class="film">
+  <header class="top">
+    <a class="back" href="index.html">← Home</a>
+    <h1>Film</h1>
+    <p class="sub">
+      Short films, collaborations, and scripts.
+    </p>
+  </header>
+
+  <main class="wrap">
+
+    <!-- FEATURED FILM (your directed piece) -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Directed</h2>
+        <p class="hint">Featured work</p>
+      </div>
+
+      <div class="featured">
+        <!-- VIDEO EMBED -->
+        <div class="video">
+          <!-- Option A: Google Drive embed (replace FILE_ID) -->
+          <!--
+          <iframe
+            src="https://drive.google.com/file/d/FILE_ID/preview"
+            allow="autoplay"
+            allowfullscreen
+            title="Film player">
+          </iframe>
+          -->
+
+          <!-- Option B: YouTube/Vimeo embed (replace src) -->
+          <!--
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Film player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          -->
+
+          <!-- Fallback placeholder: remove once you add an embed -->
+          <div class="video-placeholder">
+            <p><strong>Film player slot</strong></p>
+            <p>Paste your Google Drive <code>/preview</code> embed iframe here.</p>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <aside class="info">
+          <h3>Film Title (Year)</h3>
+          <p class="meta">
+            <span><strong>Role:</strong> Director</span><br>
+            <span><strong>Format:</strong> Short film</span><br>
+            <span><strong>Runtime:</strong> 00:00</span>
+          </p>
+
+          <p>
+            One-paragraph logline or short description. Keep it tight and human.
+          </p>
+
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener noreferrer">Watch link</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Press / festival</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- STILLS / CREDITS GRID -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Stills & Credits</h2>
+        <p class="hint">Projects I worked on</p>
+      </div>
+
+      <div class="stills">
+        <!-- Card 1 -->
+        <figure class="still">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="still-img">
+            <img src="images/still-1.jpg" alt="Film still — Project name">
+          </a>
+          <figcaption>
+            <div class="cap-title">Project Name (Year)</div>
+            <div class="cap-role">Role: Editor / Producer / DP / etc.</div>
+          </figcaption>
+        </figure>
+
+        <!-- Card 2 -->
+        <figure class="still">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="still-img">
+            <img src="images/still-2.jpg" alt="Film still — Project name">
+          </a>
+          <figcaption>
+            <div class="cap-title">Project Name (Year)</div>
+            <div class="cap-role">Role: Your role here</div>
+          </figcaption>
+        </figure>
+
+        <!-- Duplicate a <figure class="still">...</figure> block to add more -->
+      </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Scripts</h2>
+        <p class="hint">Downloads / PDFs</p>
+      </div>
+
+      <ul class="script-list">
+        <li class="script">
+          <div class="script-left">
+            <div class="script-title">Script Title</div>
+            <div class="script-meta">Feature / Short · Year · Draft info</div>
+          </div>
+          <div class="script-right">
+            <a href="#" download>Download PDF</a>
+          </div>
+        </li>
+
+        <li class="script">
+          <div class="script-left">
+            <div class="script-title">Another Script Title</div>
+            <div class="script-meta">Pilot · Year · Draft info</div>
+          </div>
+          <div class="script-right">
+            <a href="#" download>Download PDF</a>
+          </div>
+        </li>
+
+        <!-- Duplicate <li class="script">...</li> to add more -->
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <p>
+      <a href="mailto:manourimer@gmail.com">manourimer@gmail.com</a> ·
+      <a href="https://github.com/manourimer" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
