@@ -28,9 +28,20 @@ a {
   padding: 0 24px;
 }
 
-.hero h1 {
+.hero-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text h1 {
+  margin: 0;
   font-size: 48px;
-  margin-bottom: 8px;
 }
 
 .tagline {
@@ -38,21 +49,9 @@ a {
   color: rgba(0,0,0,0.6);
 }
 
-.hero-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-title h1 {
-  margin: 0;
-}
-
 .hero-avatar {
-  max-width: 64px;       
   width: 64px;
   height: 64px;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
 }
