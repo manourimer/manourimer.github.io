@@ -69,6 +69,48 @@ body.film {
   color: #000;
 }
 
+
+.script-item {
+  position: relative;
+  cursor: default;
+}
+
+.script-item::after {
+  content: attr(data-logline);
+  position: absolute;
+
+  left: 0;
+  top: calc(100% + 10px);
+
+  width: min(360px, 70vw);
+  padding: 10px 12px;
+
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.18);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  pointer-events: none;
+  z-index: 50;
+}
+
+.script-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional: subtle underline on hover */
+.script-item:hover .script-title {
+  text-decoration: underline;
+}
+
 /* ---------- CENTER: FEATURED FILM ---------- */
 
 .featured-film {
@@ -143,6 +185,9 @@ body.film {
 
 /* ---------- RIGHT: TIMELINE ---------- */
 
+.timeline {
+  position: relative;
+}
 .timeline h2 {
   font-size: 20px;
   margin-bottom: 16px;
@@ -163,6 +208,25 @@ body.film {
 .timeline-item p {
   font-size: 14px;
   color: #333;
+}
+
+
+.timeline-scroll {
+  max-height: 70vh;          /* key: creates the scroll area */
+  overflow-y: auto;
+  padding-right: 10px;       /* room for scrollbar */
+}
+
+/* make scrollbar subtle (Chrome/Safari) */
+.timeline-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.20);
+  border-radius: 999px;
+}
+.timeline-scroll::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
 }
 
 /* ---------- FOOTER ---------- */
