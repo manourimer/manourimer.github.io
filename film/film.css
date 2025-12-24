@@ -44,6 +44,15 @@ body.film {
   gap: 40px;
 }
 
+/* ---------- LEFT: Text ---------- */
+
+.text h1{
+   font-family: "Courier Prime", monospace;
+   margin-top: 12px;
+   font-size: 18px;
+}
+
+
 /* ---------- LEFT: SCRIPTS ---------- */
 
 .scripts h2 {
@@ -106,7 +115,7 @@ body.film {
   transform: translateY(0);
 }
 
-/* optional: subtle underline on hover */
+
 .script-item:hover .script-title {
   text-decoration: underline;
 }
@@ -141,7 +150,7 @@ body.film {
   inset: 0;
   pointer-events: none;
 
-  /* subtle screen sheen */
+  /* screen */
   background: linear-gradient(
     135deg,
     rgba(255,255,255,0.08),
