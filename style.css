@@ -3,11 +3,15 @@
    ===================== */
 body.home {
   font-family: "IBM Plex Sans", sans-serif;
-  color: rgba(255,255,0,0.9);
+  color: rgba(0,0,0,0.9);
   background: #fff;
   margin: 0;
   line-height: 1.7;
+   background-color: cyan !important;
 }
+
+    
+    
 
 a {
   color: inherit;
