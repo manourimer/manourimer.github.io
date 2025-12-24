@@ -81,7 +81,33 @@ body.film {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+
   border: 2px solid #000;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+
+  /* “TV glow” (still mostly monochrome) */
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.22),
+    0 0 32px rgba(0,0,0,0.18);
+}
+
+.video-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* subtle screen sheen */
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.00) 45%,
+    rgba(255,255,255,0.05)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
 }
 
 .video-frame iframe {
