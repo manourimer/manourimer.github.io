@@ -44,12 +44,28 @@ body.film {
   gap: 40px;
 }
 
-/* ---------- LEFT: Text ---------- */
+/* ---------- LEFT: notes ---------- */
 
-.text h1{
-   font-family: "Courier Prime", monospace;
-   margin-top: 12px;
-   font-size: 18px;
+.film-note {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+.film-note h3 {
+  margin: 0 0 8px;
+  font-family: "Courier Prime", monospace; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.film-note p {
+  margin: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
 }
 
 
