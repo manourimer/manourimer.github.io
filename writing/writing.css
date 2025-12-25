@@ -116,6 +116,7 @@ body.writing {
 /* ---------- HYBRID ---------- */
 
 .hybrid {
+   background: #EF6CEA;
   display: grid;
   gap: 20px;
 }
