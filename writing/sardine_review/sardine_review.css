@@ -5,9 +5,9 @@
 * { box-sizing: border-box; }
 
 :root{
-  --bg: rgba(120, 255, 235, 0.85);
-  --ink: rgba(190, 160, 255, 0.55);
-  --muted: rgba(255, 230, 170, 0.65);
+   --bg: #061a1a;
+  --ink: rgba(245,255,255,0.92);
+  --muted: rgba(245,255,255,0.70);
   --hair: rgba(245,255,255,0.14);
 
   --card: rgba(0,0,0,0.30);
