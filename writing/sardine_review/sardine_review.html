@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sardine Reviews — Manou Rimer</title>
+
+  <!-- Fonts: watery lyric + clean body -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./sardine_review.css" />
+</head>
+
+<body class="sardines">
+
+  <header class="s-hero">
+    <p class="s-back"><a href="../writing.html">← Back</a></p>
+    <h1>Sardines</h1>
+    <p class="s-tagline">Poetic, overly lyrical reviews of fish in small tins.</p>
+  </header>
+
+  <main class="s-wrap">
+
+    <!-- REVIEW TEMPLATE: duplicate this whole <article> for each review -->
+    <article class="review">
+
+      <header class="review-head">
+        <div class="review-titleblock">
+          <h2 class="review-title">Sardines in Olive Oil</h2>
+          <p class="review-sub">A tin like a pocket ocean—salted light, soft metal, a small hymn.</p>
+          <p class="review-meta">
+            <time datetime="2025-12-24">December 24, 2025</time>
+            <span class="dot">·</span>
+            <span class="rating">★★★★☆</span>
+          </p>
+        </div>
+
+        <!-- Optional: link to full Substack post -->
+        <div class="review-actions">
+          <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
+            Read full review on Substack →
+          </a>
+        </div>
+      </header>
+
+      <!-- 2 IMAGES -->
+      <section class="review-media">
+        <figure class="shot">
+          <img src="./images/review1_1.jpg" alt="Sardine tin photo 1">
+          <figcaption>Tin portrait</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <img src="./images/review1_2.jpg" alt="Sardine tin photo 2">
+          <figcaption>Interior / plating</figcaption>
+        </figure>
+      </section>
+
+      <!-- BODY (recommended: excerpt on-site, full on Substack) -->
+      <section class="review-body">
+        <p class="lead">
+          This is the excerpt that lives on your site—tight, lyrical, just enough to hook.
+          Think of it as the first sip of brine before the whole tide comes in.
+        </p>
+
+        <p>
+          Optional additional paragraph. If you decide to host the full one-page review here,
+          just keep adding paragraphs. The CSS is designed for long-form reading.
+        </p>
+
+        <!-- Optional: collapse long reviews (no JS) -->
+        <!--
+        <details class="more">
+          <summary>Open the full review</summary>
+          <p>Full review paragraph 1...</p>
+          <p>Full review paragraph 2...</p>
+        </details>
+        -->
+      </section>
+
+      <footer class="review-foot">
+        <div class="tags">
+          <span class="tag">olive oil</span>
+          <span class="tag">bright</span>
+          <span class="tag">soft metal</span>
+          <span class="tag">sea-sweet</span>
+        </div>
+      </footer>
+
+    </article>
+    <!-- END REVIEW TEMPLATE -->
+
+    <!-- Add more <article class="review"> ... </article> blocks below -->
+
+  </main>
+
+  <footer class="s-footer">
+    <p>
+      <a href="https://substack.com/@manourimer" target="_blank" rel="noopener noreferrer">Substack</a> ·
+      <a href="../index.html">Home</a>
+    </p>
+  </footer>
+
+</body>
+</html>
 
