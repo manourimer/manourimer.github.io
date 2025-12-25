@@ -1,1 +1,216 @@
+/* =========================
+   Audio Angels theme
+   low-poly + analogue horror + biblical
+   ========================= */
+
+body.audioangels{
+  /* layout (match your project pages) */
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 54px 22px;
+
+  /* typography */
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  line-height: 1.7;
+
+  /* palette */
+  color: rgba(245,245,245,0.92);
+  background-color: #06060a;
+
+  /* background: dark chapel + faint phosphor */
+  background-image:
+    radial-gradient(900px 450px at 50% 0%, rgba(255,255,255,0.06), rgba(0,0,0,0) 55%),
+    radial-gradient(700px 700px at 10% 20%, rgba(160,255,230,0.06), rgba(0,0,0,0) 60%),
+    radial-gradient(700px 700px at 90% 40%, rgba(255,180,220,0.05), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  background-attachment: fixed;
+}
+
+/* subtle scanlines + grain (CSS only) */
+body.audioangels::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    );
+  mix-blend-mode: overlay;
+}
+
+body.audioangels::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), rgba(0,0,0,0) 42%),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.28), rgba(0,0,0,0) 38%);
+  mix-blend-mode: overlay;
+}
+
+/* header */
+.aa-header{
+  margin-bottom: 26px;
+}
+
+.aa-back a{
+  color: rgba(245,245,245,0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245,245,245,0.25);
+}
+.aa-back a:hover{
+  border-bottom-color: rgba(245,245,245,0.8);
+}
+
+body.audioangels h1{
+  font-family: "Cinzel", serif;
+  letter-spacing: 1.2px;
+  font-size: 56px;
+  margin: 0 0 8px;
+  /* “holy but wrong” glow */
+  text-shadow:
+    0 0 22px rgba(170,255,235,0.18),
+    0 0 42px rgba(255,190,230,0.10);
+}
+
+.aa-subtitle{
+  margin: 0 0 8px;
+  color: rgba(245,245,245,0.78);
+}
+
+.aa-meta{
+  margin: 0;
+  color: rgba(245,245,245,0.70);
+  font-size: 14px;
+}
+
+/* sections feel like glass panels */
+.aa-section{
+  margin-top: 16px;
+  padding: 18px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.26);
+  box-shadow: 0 18px 70px rgba(0,0,0,0.35);
+}
+
+/* headings */
+body.audioangels h2{
+  font-family: "VT323", monospace;
+  font-size: 34px;
+  letter-spacing: 0.8px;
+  margin: 0 0 10px;
+  color: rgba(245,245,245,0.95);
+  text-shadow: 0 0 14px rgba(160,255,230,0.10);
+}
+
+body.audioangels a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(245,245,245,0.22);
+}
+body.audioangels a:hover{
+  border-bottom-color: rgba(245,245,245,0.85);
+}
+
+/* responsive video wrapper (same pattern as your other pages) */
+.video-wrapper{
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,0.30),
+    0 0 26px rgba(160,255,230,0.10),
+    0 0 26px rgba(255,190,230,0.08);
+}
+
+/* “TV bevel” */
+.video-wrapper::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(0,0,0,0.0) 40%,
+    rgba(255,255,255,0.06)
+  );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+.video-wrapper iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* placeholder while you don’t have iframe */
+.aa-video-placeholder{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.55);
+  color: rgba(245,245,245,0.75);
+  text-align: center;
+}
+
+.aa-video-label{
+  font-family: "VT323", monospace;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: rgba(255,190,230,0.85);
+}
+
+.aa-video-hint{
+  font-size: 14px;
+  color: rgba(245,245,245,0.65);
+}
+
+/* lists */
+body.audioangels ul, body.audioangels ol{
+  margin: 10px 0 0 22px;
+}
+
+body.audioangels code{
+  font-family: "VT323", monospace;
+  font-size: 1.15em;
+  padding: 0 6px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* gallery */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.gallery img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,0.25),
+    0
 
