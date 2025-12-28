@@ -74,7 +74,7 @@ body{
     radial-gradient(900px 650px at 85% 25%, rgba(94,240,229,0.18), transparent 60%),
     radial-gradient(900px 650px at 55% 95%, rgba(255,102,196,0.16), transparent 60%),
     radial-gradient(1200px 900px at 50% 50%, rgba(200,255,77,0.07), transparent 65%),
-    var(--ink); /* solid base color */
+    var(#00B4FF); 
 }
 
 /* Haze layer: adds that “dreamy veil” that makes chaos readable */
