@@ -1,1 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notebook Gallery</title>
+
+  <!-- IBM Plex Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="notebook.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="kicker">Notebook</p>
+      <h1>Scans, sketches, poems, marginalia</h1>
+      <p class="subhead">
+        A gallery of pages from my personal notebook—notes, drawings, fragments, and experiments.
+        Hover (or tap) a page for an artist statement.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+
+      <!-- CARD 1 -->
+      <article class="page">
+        <header class="meta">
+          <h2 class="title">Page title</h2>
+          <p class="subtitle">Short subheader describing what this page is</p>
+          <time class="date" datetime="2025-12-28">Dec 28, 2025</time>
+        </header>
+
+        <figure class="scan">
+          <img src="images/notebook/page-01.jpg" alt="Notebook scan: Page title" loading="lazy">
+          <figcaption class="overlay">
+            <div class="overlay-inner">
+              <p class="overlay-title">Artist statement</p>
+              <p class="overlay-text">
+                Write a detailed note here: what you were exploring, where the quote comes from,
+                what the sketch is studying, what the poem is trying to do, etc.
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="page">
+        <header class="meta">
+          <h2 class="title">Another page</h2>
+          <p class="subtitle">Poem + diagram + messy arrows</p>
+          <time class="date" datetime="2025-11-02">Nov 2, 2025</time>
+        </header>
+
+        <figure class="scan">
+          <img src="images/notebook/page-02.jpg" alt="Notebook scan: Another page" loading="lazy">
+          <figcaption class="overlay">
+            <div class="overlay-inner">
+              <p class="overlay-title">Notes</p>
+              <p class="overlay-text">
+                Optional. If you leave this blank, you can also remove the overlay block entirely.
+              </p>
+            </div>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Add more pages by copying an <article class="page"> ... -->
+
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <p>© <span id="y"></span> Manou</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Mobile/touch: tap to toggle artist statement
+    document.querySelectorAll(".scan").forEach(scan => {
+      scan.addEventListener("click", () => scan.classList.toggle("is-open"));
+    });
+  </script>
+</body>
+</html>
 
