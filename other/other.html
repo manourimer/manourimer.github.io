@@ -1,3 +1,260 @@
- <a class="back" href="../index.html">← Home</a>
-<br>
-<a class="back" href="quotewall/quotewall.html">Quote Wall</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Other — Manou</title>
+
+  <!--
+    Google Fonts:
+    - IBM Plex Mono = terminal-ish mono
+    - Syne = psychedelic, modern display (accent)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="other.css" />
+</head>
+
+<body>
+  <!--
+    BACKGROUND LAYERS
+    - Replace --collage-url in CSS with a real image path, or set it inline on .bg-collage.
+    - The parallax effect is "cheap but good": background-attachment: fixed + optional JS drift.
+  -->
+  <div class="bg-collage" aria-hidden="true"></div>
+  <div class="bg-haze" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- Weird floating nav (placeholders you can swap) -->
+  <nav class="weird-nav" aria-label="Site">
+    <!-- Put real links later; these are placeholders -->
+    <a class="nav-glyph" href="#" title="Home">⟡</a>
+    <a class="nav-glyph" href="#" title="Work">✶</a>
+    <a class="nav-glyph is-active" href="#" title="Other">☾</a>
+    <a class="nav-glyph" href="#" title="Contact">✹</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-topline">
+        <span class="sigil">⟡</span>
+        <span class="mono">/other</span>
+        <span class="sigil">✶</span>
+      </div>
+
+      <h1 class="title">
+        Other
+        <span class="title-ghost" aria-hidden="true">Other</span>
+      </h1>
+
+      <p class="subtitle">
+        A soft archive of side-quests, half-dreams, and strange little portals.
+        <span class="hint mono">hover to bend reality</span>
+      </p>
+
+      <div class="hero-badges">
+        <span class="badge">dreamcore</span>
+        <span class="badge">collage</span>
+        <span class="badge">weird hub</span>
+        <span class="badge badge-hot">non-minimal</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Projects grid -->
+    <section class="grid" aria-label="Other projects">
+
+      <!-- FEATURED: QuoteWall -->
+      <a class="card tilt chroma featured" href="quotewall.html">
+        <div class="thumb">
+          <!-- Replace src with your actual thumbnail -->
+          <img src="assets/thumbs/quotewall.jpg" alt="QuoteWall thumbnail" loading="lazy" />
+          <div class="thumb-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-top">
+            <h2 class="card-title">
+              QuoteWall
+              <span class="card-title-ghost" aria-hidden="true">QuoteWall</span>
+            </h2>
+            <span class="tag">portal_01</span>
+          </div>
+
+          <p class="card-desc">
+            A wall of lines that stuck to my brain like static.
+          </p>
+
+          <div class="card-meta mono">
+            <span>click →</span>
+            <span class="meta-dots" aria-hidden="true">···</span>
+            <span>enter</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- FEATURED: Journal Gallery -->
+      <a class="card tilt chroma featured" href="journal_gallery.html">
+        <div class="thumb">
+          <img src="assets/thumbs/journal_gallery.jpg" alt="Journal Gallery thumbnail" loading="lazy" />
+          <div class="thumb-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-top">
+            <h2 class="card-title">
+              Journal Gallery
+              <span class="card-title-ghost" aria-hidden="true">Journal Gallery</span>
+            </h2>
+            <span class="tag">portal_02</span>
+          </div>
+
+          <p class="card-desc">
+            A gallery of entries, fragments, and soft evidence of being alive.
+          </p>
+
+          <div class="card-meta mono">
+            <span>click →</span>
+            <span class="meta-dots" aria-hidden="true">···</span>
+            <span>wander</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TEMPLATE CARDS (copy/paste/edit) -->
+      <a class="card tilt chroma" href="#">
+        <div class="thumb is-placeholder">
+          <!-- Placeholder frame: replace with img if you want -->
+          <div class="placeholder-glyph" aria-hidden="true">✷</div>
+          <div class="thumb-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-top">
+            <h2 class="card-title">
+              Project Placeholder
+              <span class="card-title-ghost" aria-hidden="true">Project Placeholder</span>
+            </h2>
+            <span class="tag">wip</span>
+          </div>
+
+          <p class="card-desc">
+            One-liner goes here. Keep it poetic, keep it short.
+          </p>
+
+          <div class="card-meta mono">
+            <span>click →</span>
+            <span class="meta-dots" aria-hidden="true">···</span>
+            <span>open</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="card tilt chroma" href="#">
+        <div class="thumb is-placeholder">
+          <div class="placeholder-glyph" aria-hidden="true">☼</div>
+          <div class="thumb-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="card-body">
+          <div class="card-top">
+            <h2 class="card-title">
+              Another Placeholder
+              <span class="card-title-ghost" aria-hidden="true">Another Placeholder</span>
+            </h2>
+            <span class="tag">misc</span>
+          </div>
+
+          <p class="card-desc">
+            You can swap these out with real projects later.
+          </p>
+
+          <div class="card-meta mono">
+            <span>click →</span>
+            <span class="meta-dots" aria-hidden="true">···</span>
+            <span>enter</span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <footer class="footer mono">
+      <div class="footer-line">
+        <span>✶</span>
+        <span>Some doors are meant to be weird.</span>
+        <span>✶</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- OPTIONAL: nicer parallax drift + mouse tilt (small + contained).
+       If you don't want JS at all, delete this block—CSS still looks good. -->
+  <script>
+    // ======= subtle parallax drift =======
+    // Moves the haze a tiny bit with scroll; cheap + dreamy.
+    (function () {
+      const haze = document.querySelector(".bg-haze");
+      const collage = document.querySelector(".bg-collage");
+      if (!haze || !collage) return;
+
+      function onScroll() {
+        const y = window.scrollY || 0;
+        haze.style.transform = `translate3d(0, ${y * 0.03}px, 0)`;
+        // Slight opposing drift for collage overlay (keeps it alive, not jittery)
+        collage.style.transform = `translate3d(0, ${y * -0.01}px, 0)`;
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // ======= optional mouse-based tilt =======
+    // Enhances the "tilt" beyond CSS hover. Still subtle.
+    (function () {
+      const cards = document.querySelectorAll(".card.tilt");
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) return;
+
+      cards.forEach((card) => {
+        let rect;
+
+        function onMove(e) {
+          rect = rect || card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;   // 0..1
+          const y = (e.clientY - rect.top) / rect.height;   // 0..1
+
+          // Subtle tilt range
+          const rx = (0.5 - y) * 6;  // rotateX
+          const ry = (x - 0.5) * 8;  // rotateY
+
+          card.style.setProperty("--tilt-rx", `${rx}deg`);
+          card.style.setProperty("--tilt-ry", `${ry}deg`);
+        }
+
+        function onEnter() {
+          rect = card.getBoundingClientRect();
+          card.classList.add("is-tilting");
+        }
+
+        function onLeave() {
+          card.classList.remove("is-tilting");
+          card.style.setProperty("--tilt-rx", `0deg`);
+          card.style.setProperty("--tilt-ry", `0deg`);
+          rect = null;
+        }
+
+        card.addEventListener("mouseenter", onEnter);
+        card.addEventListener("mousemove", onMove);
+        card.addEventListener("mouseleave", onLeave);
+      });
+    })();
+  </script>
+</body>
+</html>
