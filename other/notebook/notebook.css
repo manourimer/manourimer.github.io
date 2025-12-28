@@ -54,6 +54,7 @@ h1{
   display: grid;
   gap: 26px;
   padding: 18px 0 54px;
+  justify-items: start;
 }
 
 /* each notebook entry */
