@@ -17,18 +17,18 @@ body.film {
 
 .film-hero {
   text-align: center;
-  margin: 80px 0 60px;
+  margin: 70px 0 50px;
 }
 
 .film-hero h1 {
-  font-size: 64px;
+  font-size: 40px;
   letter-spacing: 4px;
   margin: 0;
 }
 
 .film-tagline {
-  margin-top: 12px;
-  font-size: 18px;
+  margin-top: 8px;
+  font-size: 12px;
   color: #444;
 }
 
@@ -237,7 +237,7 @@ body.film {
 
 
 .timeline-scroll {
-  max-height: 100vh;          /* key: creates the scroll area */
+  max-height: 90vh;          /* key: creates the scroll area */
   overflow-y: auto;
   padding-right: 10px;       /* room for scrollbar */
 }
