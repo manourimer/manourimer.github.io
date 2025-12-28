@@ -39,9 +39,9 @@
 html, body { height: 100%; }
 body{
   margin: 0;
-  background: radial-gradient(1200px 700px at 20% 10%, rgba(185,167,255,0.18), transparent 60%),
-              radial-gradient(900px 600px at 85% 20%, rgba(94,240,229,0.16), transparent 60%),
-              radial-gradient(800px 600px at 45% 95%, rgba(255,102,196,0.14), transparent 60%),
+  background: radial-gradient(1200px 700px at 20% 10%, rgba(185,167,255,1), transparent 60%),
+              radial-gradient(900px 600px at 85% 20%, rgba(94,240,229,1), transparent 60%),
+              radial-gradient(800px 600px at 45% 95%, rgba(255,102,196,1), transparent 60%),
               var(--ink);
   color: var(--paper);
   font-family: var(--mono);
