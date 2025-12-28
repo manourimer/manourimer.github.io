@@ -42,7 +42,7 @@ body{
   background: radial-gradient(1200px 700px at 20% 10%, rgba(185,167,255,0.18), transparent 60%),
               radial-gradient(900px 600px at 85% 20%, rgba(94,240,229,0.16), transparent 60%),
               radial-gradient(800px 600px at 45% 95%, rgba(255,102,196,0.14), transparent 60%),
-              var(--ink);
+              var(#00B4FF);
   color: var(--paper);
   font-family: var(--mono);
   overflow-x: hidden;
@@ -65,17 +65,7 @@ body{
 /* Collage base: image + dreamy overlays */
 .bg-collage{
   z-index: -5;
-  background-image:
-    /* soft prismatic film */
-    radial-gradient(900px 600px at 25% 15%, rgba(94,240,229,0.14), transparent 55%),
-    radial-gradient(900px 650px at 80% 20%, rgba(185,167,255,0.16), transparent 55%),
-    radial-gradient(900px 700px at 60% 95%, rgba(255,102,196,0.13), transparent 55%),
-    /* your collage image */
-    var(#00B4FF);
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.15) contrast(1.05) blur(0.3px);
-  transform: translate3d(0,0,0); /* will be nudged by optional JS */
+   inset:0;
 }
 
 /* Haze layer: adds that “dreamy veil” that makes chaos readable */
