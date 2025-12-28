@@ -1,1 +1,483 @@
+/* =========================================================
+   OTHER PAGE — Dreamcore collage hub
+   - non-minimal, psychedelic accents, still usable
+   - card grid with thumbnails + one-liners
+   - weird floating nav
+   - subtle parallax background + optional JS tilt
+   ========================================================= */
+
+/* ---------- signature palette (edit these!) ---------- */
+:root{
+  /* You said "signature palette" but didn’t give hex codes,
+     so here’s a dreamcore starter palette. Swap freely. */
+  --ink: #0b0b14;        /* deep night */
+  --paper: #f7f2ff;      /* milky lavender */
+  --fog: rgba(255,255,255,0.10);
+  --fog2: rgba(255,255,255,0.06);
+
+  --lav: #b9a7ff;        /* lavender */
+  --aqua: #5ef0e5;       /* aquatic neon */
+  --pink: #ff66c4;       /* hot dream pink */
+  --acid: #c8ff4d;       /* acid accent */
+  --gold: #ffe5a8;       /* soft gold */
+
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --display: "Syne", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-xl: 22px;
+  --radius-lg: 18px;
+
+  --shadow: 0 18px 50px rgba(0,0,0,0.55);
+  --shadow-soft: 0 16px 40px rgba(0,0,0,0.35);
+  --border: 1px solid rgba(255,255,255,0.14);
+
+  /* collage image: replace this with your own file path */
+  --collage-url: url("assets/collage/other_collage.jpg");
+}
+
+/* ---------- base ---------- */
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  background: radial-gradient(1200px 700px at 20% 10%, rgba(185,167,255,0.18), transparent 60%),
+              radial-gradient(900px 600px at 85% 20%, rgba(94,240,229,0.16), transparent 60%),
+              radial-gradient(800px 600px at 45% 95%, rgba(255,102,196,0.14), transparent 60%),
+              var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  overflow-x: hidden;
+}
+
+/* Utility classes */
+.mono{ font-family: var(--mono); letter-spacing: 0.02em; }
+.sigil{ opacity: 0.9; filter: drop-shadow(0 0 18px rgba(185,167,255,0.45)); }
+
+/* ---------- background layers ---------- */
+.bg-collage,
+.bg-haze,
+.bg-noise{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -3;
+}
+
+/* Collage base: image + dreamy overlays */
+.bg-collage{
+  z-index: -5;
+  background-image:
+    /* soft prismatic film */
+    radial-gradient(900px 600px at 25% 15%, rgba(94,240,229,0.14), transparent 55%),
+    radial-gradient(900px 650px at 80% 20%, rgba(185,167,255,0.16), transparent 55%),
+    radial-gradient(900px 700px at 60% 95%, rgba(255,102,196,0.13), transparent 55%),
+    /* your collage image */
+    var(--collage-url);
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.15) contrast(1.05) blur(0.3px);
+  transform: translate3d(0,0,0); /* will be nudged by optional JS */
+}
+
+/* Haze layer: adds that “dreamy veil” that makes chaos readable */
+.bg-haze{
+  z-index: -4;
+  background:
+    linear-gradient(180deg, rgba(11,11,20,0.30), rgba(11,11,20,0.65)),
+    radial-gradient(800px 500px at 30% 30%, rgba(255,255,255,0.10), transparent 60%),
+    radial-gradient(900px 650px at 75% 35%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(900px 700px at 55% 92%, rgba(255,255,255,0.06), transparent 60%);
+  backdrop-filter: blur(8px);
+  transform: translate3d(0,0,0); /* will be nudged by optional JS */
+}
+
+/* Noise layer: no image needed — pure CSS texture */
+.bg-noise{
+  z-index: -3;
+  opacity: 0.14;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, rgba(255,255,255,0.10) 0 1px, transparent 1px 6px),
+    repeating-radial-gradient(circle at 80% 60%, rgba(255,255,255,0.08) 0 1px, transparent 1px 7px);
+  mix-blend-mode: overlay;
+  filter: blur(0.2px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .bg-collage, .bg-haze{ transform: none !important; }
+}
+
+/* ---------- weird floating nav ---------- */
+.weird-nav{
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 20;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 999px;
+  border: var(--border);
+  background: rgba(11,11,20,0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-glyph{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--paper);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+  font-family: var(--display);
+  font-weight: 700;
+}
+
+.nav-glyph:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.10);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.12),
+    0 0 24px rgba(185,167,255,0.18),
+    0 0 28px rgba(94,240,229,0.12);
+}
+
+.nav-glyph.is-active{
+  background: rgba(185,167,255,0.16);
+  border-color: rgba(185,167,255,0.30);
+}
+
+/* ---------- hero ---------- */
+.hero{
+  padding: 88px 20px 24px;
+}
+
+.hero-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 22px;
+  border-radius: var(--radius-xl);
+  border: var(--border);
+  background: rgba(11,11,20,0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.hero-topline{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.95;
+}
+
+.title{
+  margin: 10px 0 8px;
+  font-family: var(--display);
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.02;
+  position: relative;
+}
+
+/* Dreamy “ghost title” for chroma / echo */
+.title-ghost{
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.10);
+  text-shadow:
+    2px 0 0 rgba(94,240,229,0.25),
+   -2px 0 0 rgba(255,102,196,0.20),
+    0 0 30px rgba(185,167,255,0.15);
+  transform: translate(2px, 1px);
+  pointer-events: none;
+  filter: blur(0.2px);
+}
+
+.subtitle{
+  margin: 0;
+  max-width: 72ch;
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.subtitle .hint{
+  display: inline-block;
+  margin-left: 10px;
+  opacity: 0.75;
+}
+
+.hero-badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.badge{
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+}
+
+.badge-hot{
+  border-color: rgba(200,255,77,0.25);
+  background: rgba(200,255,77,0.10);
+}
+
+/* ---------- main wrap ---------- */
+.wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 64px;
+}
+
+/* ---------- grid ---------- */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Cards span: featured bigger */
+.card{
+  grid-column: span 6;
+  text-decoration: none;
+  color: var(--paper);
+  border-radius: var(--radius-xl);
+  border: var(--border);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
+
+  /* For tilt */
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0);
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease, border-color 240ms ease;
+  will-change: transform;
+}
+
+/* Featured cards take more space on wide screens */
+.card.featured{
+  grid-column: span 6; /* change to span 12 if you want them full-width */
+}
+
+/* On smaller screens: single column */
+@media (max-width: 820px){
+  .card, .card.featured{ grid-column: span 12; }
+  .hero{ padding-top: 82px; }
+}
+
+/* Thumbnail area */
+.thumb{
+  height: 160px;
+  position: relative;
+  background: rgba(255,255,255,0.05);
+}
+
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.10) contrast(1.05);
+}
+
+/* Placeholder thumbnail (no image yet) */
+.thumb.is-placeholder{
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(600px 240px at 20% 30%, rgba(185,167,255,0.22), transparent 60%),
+    radial-gradient(540px 220px at 80% 55%, rgba(94,240,229,0.18), transparent 60%),
+    radial-gradient(600px 240px at 45% 100%, rgba(255,102,196,0.14), transparent 60%),
+    rgba(255,255,255,0.05);
+}
+
+.placeholder-glyph{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 44px;
+  opacity: 0.9;
+  text-shadow:
+    2px 0 0 rgba(94,240,229,0.35),
+   -2px 0 0 rgba(255,102,196,0.30),
+    0 0 26px rgba(185,167,255,0.22);
+}
+
+/* Overlay makes thumbnails feel dreamy + consistent */
+.thumb-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11,11,20,0.08), rgba(11,11,20,0.70)),
+    radial-gradient(700px 260px at 25% 25%, rgba(255,255,255,0.10), transparent 60%);
+  mix-blend-mode: normal;
+}
+
+/* Body */
+.card-body{
+  padding: 16px 16px 18px;
+}
+
+.card-top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-title{
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-size: 22px;
+  position: relative;
+  line-height: 1.08;
+}
+
+.card-title-ghost{
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  text-shadow:
+    1.5px 0 0 rgba(94,240,229,0.22),
+   -1.5px 0 0 rgba(255,102,196,0.18);
+  transform: translate(1px, 1px);
+  pointer-events: none;
+}
+
+.tag{
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  opacity: 0.9;
+}
+
+.card-desc{
+  margin: 10px 0 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.card-meta{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.75;
+  font-size: 12px;
+}
+
+.meta-dots{
+  letter-spacing: 0.3em;
+}
+
+/* ---------- hover / tilt / chroma ---------- */
+
+/* Base hover tilt (works without JS) */
+.card.tilt:hover{
+  transform: perspective(900px) rotateX(2.5deg) rotateY(-3.5deg) translateY(-4px);
+  border-color: rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(255,255,255,0.12);
+}
+
+/* Enhanced tilt (when JS sets --tilt-rx/--tilt-ry + .is-tilting) */
+.card.is-tilting{
+  transform:
+    perspective(900px)
+    rotateX(var(--tilt-rx, 0deg))
+    rotateY(var(--tilt-ry, 0deg))
+    translateY(-4px);
+}
+
+/* Chromatic aberration glow for the whole card */
+.card.chroma::before,
+.card.chroma::after{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.card.chroma::before{
+  box-shadow:
+    6px 0 0 rgba(94,240,229,0.22),
+   -6px 0 0 rgba(255,102,196,0.18);
+  filter: blur(0.6px);
+}
+
+.card.chroma::after{
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.10),
+    0 0 40px rgba(185,167,255,0.16);
+}
+
+.card.chroma:hover::before,
+.card.chroma:hover::after{
+  opacity: 1;
+}
+
+/* Make title “pulse” a tiny bit on hover (dreamy, not flashy) */
+.card:hover .card-title{
+  text-shadow:
+    1px 0 0 rgba(94,240,229,0.18),
+   -1px 0 0 rgba(255,102,196,0.14),
+    0 0 24px rgba(185,167,255,0.12);
+}
+
+/* Reduced motion: remove hover transforms */
+@media (prefers-reduced-motion: reduce){
+  .card, .card:hover, .card.is-tilting{ transform: none !important; }
+  .card::before, .card::after{ display: none; }
+}
+
+/* ---------- footer ---------- */
+.footer{
+  margin-top: 26px;
+  padding: 18px 14px;
+  border-radius: var(--radius-lg);
+  border: var(--border);
+  background: rgba(11,11,20,0.35);
+  backdrop-filter: blur(10px);
+}
+
+.footer-line{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0.85;
+}
+
+/* ---------- extra: "parallax feel" without JS ---------- */
+/* This is optional. If you like the fixed collage effect, keep it.
+   If it feels janky on mobile Safari, remove background-attachment: fixed; */
+@supports (background-attachment: fixed){
+  .bg-collage{
+    background-attachment: fixed;
+  }
+}
 
