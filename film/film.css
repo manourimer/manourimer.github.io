@@ -184,16 +184,6 @@ body.film {
   height: 100%;
 }
 
-.video-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 14px;
-}
 
 /* ---------- FILM INFO ---------- */
 
@@ -203,7 +193,7 @@ body.film {
 }
 
 .film-info p {
-   font-size: 15px;
+   font-size: 13px;
   margin-bottom: 4px;
 }
 
