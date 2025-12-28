@@ -55,7 +55,7 @@ body.film {
 .film-note h3 {
   margin: 0 0 8px;
   font-family: "Courier Prime", monospace; 
-  font-size: 14px;
+  font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
