@@ -202,6 +202,11 @@ body.film {
   margin-bottom: 4px;
 }
 
+.film-info p {
+   font-size: 10px;
+  margin-bottom: 4px;
+}
+
 .film-meta {
   font-size: 14px;
   color: #555;
