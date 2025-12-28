@@ -10,7 +10,7 @@ body.writing {
   margin: 0;
   background: #E7F8FE;
   color: #111;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.6;
 }
 
@@ -69,7 +69,7 @@ body.writing {
 
 .card h3 {
   margin: 0 0 8px;
-  font-family: "Libre Baskerville", serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 22px;
 }
 
