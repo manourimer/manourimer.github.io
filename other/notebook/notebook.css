@@ -64,7 +64,7 @@ h1{
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  max-width: 640px;   /* ← adjust this (try 600–720px) */
+  max-width: 400px;   /* ← adjust this (try 600–720px) */
   margin-left: 44px;   
 }
 
