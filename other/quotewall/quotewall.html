@@ -1,22 +1,88 @@
-<a class="back" href="../other.html">← Back</a> <br>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuoteWall</title>
 
-<p> Great minds think alike, though fools seldom differ. </p> <br>
-<p> Living is easy with eyes closed. </p> <br>
-<p> If you think you're the smartest person in the room, then you're in the wrong room. </p> <br>
-<p> Every day, give yourself one small present. </p> <br>
-<p> And those who were dancing were thought insane by those who could not hear the music. </p> <br>
-<p> Curiosity killed the cat, but satisfaction brought it back. </p> <br>
-<p> When a metric becomes a target, it ceases to become a good indicator of performance. </p> <br>
-<p> It is far better to be alone than to be in bad company. </p> <br>
-<p> Always remember that you are absolutely unique. Just like everyone else. </p> <br>
-<p> No worthy problem was ever solved in the plane of its original conception. </p> <br>
-<p> For though we love both the truth and our friends, reverance is due to the truth first. </p> <br>
-<p> Renunciation of pleasure can easily turn into pleasure of renunciation </p> <br>
-<p> Life is not about finding yourself. Life is about creating yourself. </p> <br>
-<p> Change your thorughts and you change your world.  </p> <br>
-<p> The best time to plant a tree was 20 years ago. The second best is right now. </p> <br>
-<p> Getting started is half the battle. </p> <br>
-<p> In 20 years you'll regret the things you didn't do a lot more than the things you did do.</p> <br>
+  <!-- IBM Plex Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
+  <link rel="stylesheet" href="quotewall.css" />
+</head>
 
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">OTHER → QuoteWall</p>
+      <h1 class="title">QuoteWall</h1>
 
+      <!-- Write your little something here -->
+      <p class="subtitle">
+        A small collection of lines that lodged themselves in me. (Replace this with your own note.)
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="quotes" aria-label="Quotes">
+
+      <!-- ============== QUOTE TEMPLATE (copy/paste) ============== -->
+      <figure class="quote-card">
+        <blockquote class="quote-text">
+          “Put the quote text here. Keep the punctuation as you like.”
+        </blockquote>
+
+        <figcaption class="quote-meta">
+          <span class="author">— Author Name</span>
+          <span class="source">, Work / Book / Talk (optional)</span>
+        </figcaption>
+
+        <!-- Optional: your personal note (clear it's you, quieter styling) -->
+        <p class="my-note">
+          <span class="my-note-label">me:</span>
+          A short line about why this hits. (Optional. Delete if you don’t want a note for this quote.)
+        </p>
+      </figure>
+
+      <!-- Example 2 -->
+      <figure class="quote-card">
+        <blockquote class="quote-text">
+          “Another quote. Another small door.”
+        </blockquote>
+
+        <figcaption class="quote-meta">
+          <span class="author">— Someone</span>
+        </figcaption>
+
+        <p class="my-note">
+          <span class="my-note-label">me:</span>
+          Optional note. You can also make these longer; they’ll wrap nicely.
+        </p>
+      </figure>
+
+      <!-- Example 3 (no personal note) -->
+      <figure class="quote-card">
+        <blockquote class="quote-text">
+          “A quote without a personal note underneath is also fine.”
+        </blockquote>
+
+        <figcaption class="quote-meta">
+          <span class="author">— Author</span>
+          <span class="source">, Source</span>
+        </figcaption>
+      </figure>
+
+    </section>
+
+    <footer class="footer">
+      <p class="footer-text">✶</p>
+    </footer>
+  </main>
+</body>
+</html>
