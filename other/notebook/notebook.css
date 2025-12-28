@@ -1,1 +1,160 @@
+:root{
+  --bg: #f7fbff;
+  --ink: #0b1220;
+  --muted: rgba(11,18,32,.68);
+  --card: rgba(255,255,255,.72);
+  --border: rgba(11,18,32,.10);
+  --shadow: 0 12px 40px rgba(11,18,32,.10);
+  --radius: 18px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.45;
+}
+
+.wrap{
+  width: min(1060px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header{
+  padding: 44px 0 20px;
+}
+
+.kicker{
+  margin: 0 0 8px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+h1{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.02em;
+}
+
+.subhead{
+  max-width: 70ch;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.grid{
+  display: grid;
+  gap: 26px;
+  padding: 18px 0 54px;
+}
+
+/* each notebook entry */
+.page{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.meta{
+  padding: 18px 18px 12px;
+}
+
+.title{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.date{
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* big scan */
+.scan{
+  position: relative;
+  margin: 0;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.55);
+}
+
+.scan img{
+  display: block;
+  width: 100%;
+  height: auto;
+  /* makes images feel “printed” */
+  filter: contrast(1.02) saturate(1.02);
+}
+
+/* hover/tap overlay */
+.overlay{
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: grid;
+  align-items: end;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(11,18,32,.78), rgba(11,18,32,.00) 60%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+}
+
+.overlay-inner{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.60);
+  border-radius: 14px;
+  padding: 12px 12px;
+  box-shadow: 0 10px 24px rgba(11,18,32,.18);
+}
+
+.overlay-title{
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.overlay-text{
+  margin: 0;
+  color: rgba(11,18,32,.78);
+  font-size: 13px;
+}
+
+/* Desktop: hover reveals */
+.scan:hover .overlay{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile: tap toggles */
+.scan.is-open .overlay{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* footer */
+.footer{
+  padding: 18px 0 44px;
+  color: var(--muted);
+  font-size: 13px;
+}
 
