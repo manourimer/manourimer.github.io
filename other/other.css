@@ -32,7 +32,7 @@
   --border: 1px solid rgba(255,255,255,0.14);
 
   /* collage image: replace this with your own file path */
-  --collage-url: url("assets/collage/other_collage.jpg");
+  --collage-url: url("../../logo.jpg");
 }
 
 /* ---------- base ---------- */
