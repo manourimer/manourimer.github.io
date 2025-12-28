@@ -237,7 +237,7 @@ body.film {
 
 
 .timeline-scroll {
-  max-height: 70vh;          /* key: creates the scroll area */
+  max-height: 100vh;          /* key: creates the scroll area */
   overflow-y: auto;
   padding-right: 10px;       /* room for scrollbar */
 }
