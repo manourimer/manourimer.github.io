@@ -64,7 +64,7 @@ h1{
   box-shadow: var(--shadow);
   overflow: hidden;
   max-width: 640px;   /* ← adjust this (try 600–720px) */
-  margin-left: 40px;   
+  margin-left: 35px;   
 }
 
 .meta{
