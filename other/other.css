@@ -31,8 +31,7 @@
   --shadow-soft: 0 16px 40px rgba(0,0,0,0.35);
   --border: 1px solid rgba(255,255,255,0.14);
 
-  /* collage image: replace this with your own file path */
-  --collage-url: url("../../logo.jpg");
+  
 }
 
 /* ---------- base ---------- */
