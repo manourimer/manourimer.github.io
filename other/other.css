@@ -71,7 +71,7 @@ body{
     radial-gradient(900px 650px at 80% 20%, rgba(185,167,255,0.16), transparent 55%),
     radial-gradient(900px 700px at 60% 95%, rgba(255,102,196,0.13), transparent 55%),
     /* your collage image */
-    var(--collage-url);
+    var(#00B4FF);
   background-size: cover;
   background-position: center;
   filter: saturate(1.15) contrast(1.05) blur(0.3px);
