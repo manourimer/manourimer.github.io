@@ -63,6 +63,8 @@ h1{
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
+  max-width: 640px;   /* ← adjust this (try 600–720px) */
+  margin: 0 auto;     /* centers the card */
 }
 
 .meta{
