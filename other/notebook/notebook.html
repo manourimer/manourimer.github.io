@@ -696,6 +696,7 @@
 
   <figure class="lightbox-figure" role="dialog" aria-modal="true">
     <img id="lightboxImg" alt="">
+    <button class="lightbox-close" aria-label="Close">×</button>
     <figcaption class="lightbox-caption" id="lightboxCap"></figcaption>
   </figure>
 </div>
@@ -723,6 +724,10 @@
     document.body.classList.remove("no-scroll");
     lbImg.src = ""; // prevents flashing old image next open
   }
+  const closeBtn = document.querySelector(".lightbox-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
 
   // Click any scan image to open
   document.querySelectorAll(".scan img").forEach(img => {
@@ -743,6 +748,8 @@
     if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
   });
 </script>
+  
+
 
 
   
