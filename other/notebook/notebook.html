@@ -695,6 +695,51 @@
     <figcaption class="lightbox-caption" id="lightboxCap"></figcaption>
   </figure>
 </div>
+  <script>
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightboxImg");
+  const lbCap = document.getElementById("lightboxCap");
+
+  function openLightbox(imgEl) {
+    lbImg.src = imgEl.src;
+    lbImg.alt = imgEl.alt || "";
+
+    // Optional caption: uses the card title
+    const title = imgEl.closest(".page")?.querySelector(".title")?.textContent?.trim();
+    lbCap.textContent = title ? title : "";
+
+    lb.classList.add("is-open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+  }
+
+  function closeLightbox() {
+    lb.classList.remove("is-open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("no-scroll");
+    lbImg.src = ""; // prevents flashing old image next open
+  }
+
+  // Click any scan image to open
+  document.querySelectorAll(".scan img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openLightbox(img);
+    });
+  });
+
+  // Click backdrop to close
+  lb.addEventListener("click", (e) => {
+    if (e.target.hasAttribute("data-close") || e.target === lb) closeLightbox();
+  });
+
+  // ESC closes
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lb.classList.contains("is-open")) closeLightbox();
+  });
+</script>
+
 
   
   
