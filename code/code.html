@@ -1,0 +1,156 @@
+<!-- =========================
+     code.html
+     Cohesive "Film-template" layout for CODED PROJECTS
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Code — Manou Rimer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts (match Film: IBM Plex Sans + Courier Prime; keep VT323 just for the big title) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="code.css" />
+</head>
+
+<body class="code">
+
+  <!-- TOP HOME BUTTON (kept, per your request) -->
+  <header class="topbar">
+    <a class="topbar-home" href="../index.html">← Home</a>
+  </header>
+
+  <!-- HERO (Film-like: centered title + small tagline) -->
+  <header class="code-hero">
+    <h1>CODED PROJECTS</h1>
+    <p class="code-tagline">
+      How can programming be used for storytelling?
+    </p>
+  </header>
+
+  <!-- MAIN LAYOUT (Film-like 3 columns) -->
+  <main class="code-layout">
+
+    <!-- LEFT: NOTE (Film-like “A Little Note…” in Courier Prime) -->
+    <aside class="code-note">
+      <h2>A Little Note on my Journey with Code</h2>
+
+      <p>
+        I’m interested in code as a narrative medium: not just a tool to deliver a story,
+        but a system that can *be* the story—through interaction, constraint, and emergence.
+      </p>
+      <br>
+      <p>
+        My favorite projects tend to sit at the edge of play and structure: worlds you can
+        explore, rules you can learn, and moments where a system unexpectedly feels like a voice.
+      </p>
+      <br>
+      <p>
+        I’m especially drawn to audiovisual work (sound + image + input), because it makes
+        “meaning” feel physical—felt through timing, rhythm, texture, and attention.
+      </p>
+
+      <!-- Optional: you can add a small “focus areas” list later if you want -->
+      <!--
+      <div class="note-divider"></div>
+      <p class="note-small"><strong>Current obsessions:</strong> interactive scripture, surreal mechanics, audio-reactive systems.</p>
+      -->
+    </aside>
+
+    <!-- CENTER: FEATURED PROJECT (Film-like TV iframe + structured writeup underneath) -->
+    <section class="featured">
+
+      <!-- Small label above the “TV screen” -->
+      <div class="featured-label">FEATURED PROJECT</div>
+
+      <!-- “TV” Frame (based on Film’s video-frame) -->
+      <div class="tv-frame">
+        <!-- Template iframe: swap the src with YouTube (or Drive) -->
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          title="Featured project demo"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Featured info (same structural rhythm as Film page) -->
+      <div class="featured-info">
+        <h2>THE APOCRYPHON OF JOHN (2025)</h2>
+        <p class="featured-meta">
+          ChuGL · Interactive audiovisual exposé · “pixel cosmology”
+        </p>
+
+        <p>
+          THE APOCRYPHON OF JOHN is an interactive world built as a kind of speculative commentary:
+          a narrative you don’t just read, but navigate—where the interface is part of the meaning.
+        </p>
+
+        <p>
+          On the surface, it’s a surreal, game-like exploration with audiovisual “rituals” and
+          small mechanical gestures. Underneath, it’s an experiment in whether a system can
+          deliver tone and theology the way a scene does.
+        </p>
+
+        <p>
+          I treat constraint as the engine: limited palettes, deliberately “toy” scale rules,
+          and interactions that feel slightly too literal—so that interpretation has to do work.
+        </p>
+
+        <p>
+          More than any single moment, what matters is the accumulation: the way repeated actions
+          slowly shape a reading, like motifs do in film.
+        </p>
+
+        <p>
+          For me, it’s a continuing attempt to build narrative systems that are emotionally legible
+          without collapsing into exposition.
+        </p>
+      </div>
+    </section>
+
+    <!-- RIGHT: PROJECTS SCROLL (Film-like “Productions” sidebar) -->
+    <aside class="timeline">
+      <h2>PROJECTS</h2>
+
+      <div class="timeline-scroll">
+        <!-- Featured appears in the list too (per your request) -->
+        <a class="timeline-item" href="interactive-apocryphon/interactive-apocryphon.html">
+          <img src="interactive-apocryphon/YALDABAOTH.png" alt="The Apocryphon of John screenshot">
+          <p>
+            <strong> THE APOCRYPHON OF JOHN (2025) </strong><br>
+            ChuGL · interactive audiovisual world
+          </p>
+        </a>
+
+        <a class="timeline-item" href="yahwehs-circus/yahwehs-circus.html">
+          <img src="yahwehs-circus/YahwehsThumb.png" alt="Yahweh’s Circus screenshot">
+          <p>
+            <strong> YAHWEH’S CIRCUS (2025) </strong><br>
+            surreal mechanics · functional 3D music sequencer
+          </p>
+        </a>
+
+        <a class="timeline-item" href="audioangels/audioangels.html">
+          <img src="audioangels/AudioAngel1.png" alt="Audio Angels screenshot">
+          <p>
+            <strong> AUDIO ANGELS (2025) </strong><br>
+            audiovisualizer · modes · signal bloom
+          </p>
+        </a>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- BOTTOM HOME BUTTON (Film-like footer; kept, per your request) -->
+  <footer class="code-footer">
+    <a href="../index.html">← Home</a>
+  </footer>
+
+</body>
+</html>
