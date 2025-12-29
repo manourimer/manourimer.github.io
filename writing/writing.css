@@ -1,0 +1,309 @@
+/* =========================
+   writing.css
+   Film-template cohesion:
+   - Same sky background
+   - 3-column grid (left note / center featured / right scroll)
+   - IBM Plex Sans base + Courier Prime for the note
+   - “TV frame” style reused for PDF preview
+   ========================= */
+
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #8BDDFD;
+  --ink: #111;
+  --muted: #444;
+  --muted2: #555;
+  --border: rgba(0,0,0,0.18);
+  --hairline: rgba(0,0,0,0.15);
+  --shadow: rgba(0,0,0,0.12);
+  --radius: 14px;
+}
+
+body.writing{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* =========================
+   TOP HOME BUTTON
+   ========================= */
+.topbar{
+  padding: 18px 18px 0;
+}
+
+.topbar-home{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: #000;
+  background: rgba(255,255,255,0.15);
+}
+
+.topbar-home:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+/* =========================
+   HERO (Film-like)
+   ========================= */
+.writing-hero{
+  text-align: center;
+  margin: 70px 0 50px;
+}
+
+.writing-hero h1{
+  font-size: 40px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.writing-tagline{
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   3-COLUMN LAYOUT (Film-like)
+   ========================= */
+.writing-layout{
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 40px;
+}
+
+/* =========================
+   LEFT: NOTE (Courier Prime)
+   ========================= */
+.writing-note h2{
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+
+.writing-note p{
+  margin: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* =========================
+   CENTER: FEATURED WORK
+   ========================= */
+.featured-work{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.featured-label{
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* PDF frame: same “TV” treatment as Film */
+.pdf-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 2px solid #000;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.22),
+    0 0 32px rgba(0,0,0,0.18);
+}
+
+.pdf-frame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.00) 45%,
+    rgba(255,255,255,0.06)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+}
+
+.pdf-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* CTA */
+.featured-cta{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-read{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+
+  text-decoration: none;
+  color: #000;
+  background: rgba(255,255,255,0.18);
+}
+
+.btn-read:hover{
+  background: rgba(255,255,255,0.32);
+  text-decoration: underline;
+}
+
+/* Film-like writeup block */
+.work-info h2{
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.work-meta{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted2);
+}
+
+.work-info p{
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+/* =========================
+   RIGHT: WORKS SCROLL (text-only)
+   ========================= */
+.works{
+  position: relative;
+}
+
+.works h2{
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.works-scroll{
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar styling (Chrome/Safari) */
+.works-scroll::-webkit-scrollbar{ width: 10px; }
+.works-scroll::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.20);
+  border-radius: 999px;
+}
+.works-scroll::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.05);
+}
+
+/* Work items (text-only “timeline”) */
+.work-item{
+  padding: 14px 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.10);
+  margin-bottom: 14px;
+}
+
+.work-top{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.work-tag{
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.12);
+  color: #000;
+  white-space: nowrap;
+}
+
+.work-subtitle{
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.45;
+}
+
+.work-link{
+  font-size: 13px;
+  color: #000;
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER (Film-like)
+   ========================= */
+.writing-footer{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.writing-footer a{
+  color: #000;
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE (Film-like collapse)
+   ========================= */
+@media (max-width: 900px){
+  .writing-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* featured first, then side columns */
+  .writing-note,
+  .works{
+    order: 2;
+  }
+  .featured-work{
+    order: 1;
+  }
+
+  .writing-hero h1{
+    font-size: 48px;
+  }
+
+  .topbar{
+    padding-top: 14px;
+  }
+}
