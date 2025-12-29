@@ -1,0 +1,188 @@
+<!-- =========================
+     writing.html
+     Film-template layout for WRITING
+     - Left: note on writing
+     - Center: featured PDF preview + Film-style writeup
+     - Right: scrollable list of works (text-only) with Read/Enter links
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Writing — Manou Rimer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Match Film template typography -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="writing.css" />
+</head>
+
+<body class="writing">
+
+  <!-- TOP HOME BUTTON (kept, per your request) -->
+  <header class="topbar">
+    <a class="topbar-home" href="../index.html">← Home</a>
+  </header>
+
+  <!-- HERO (Film-like: centered title + small tagline) -->
+  <header class="writing-hero">
+    <h1>WRITING</h1>
+    <p class="writing-tagline">
+      Fiction, essays, and work that sits somewhere in between.
+    </p>
+  </header>
+
+  <!-- MAIN 3-COLUMN LAYOUT (Film-like) -->
+  <main class="writing-layout">
+
+    <!-- LEFT COLUMN: NOTE ON WRITING -->
+    <aside class="writing-note">
+      <h2>A Little Note on my Journey with Writing</h2>
+
+      <p>
+        I write to test how far a voice can stretch while still sounding like a person.
+        Some pieces start as stories; others begin as a question and only later admit they
+        were always narrative.
+      </p>
+      <br>
+      <p>
+        I’m drawn to work that’s emotionally legible but structurally strange—where meaning
+        emerges through constraint, repetition, and tone as much as through plot.
+      </p>
+      <br>
+      <p>
+        Even when I’m writing essays, I tend to think cinematically: attention as editing,
+        argument as pacing, imagery as a kind of continuity.
+      </p>
+    </aside>
+
+    <!-- CENTER COLUMN: FEATURED WORK -->
+    <section class="featured-work">
+
+      <div class="featured-label">FEATURED WORK</div>
+
+      <!-- PDF “screen” (Film-style TV frame but for PDF) -->
+      <div class="pdf-frame">
+        <!-- Direct PDF embed (per your request). Replace file path as needed. -->
+        <iframe
+          src="./AFinalDreamFinalDraft.pdf"
+          title="A Final Dream — PDF preview">
+        </iframe>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="featured-cta">
+        <a class="btn-read" href="./AFinalDreamFinalDraft.pdf" target="_blank" rel="noopener">
+          Read full story →
+        </a>
+      </div>
+
+      <!-- Film-like explanatory block underneath -->
+      <div class="work-info">
+        <h2>A FINAL DREAM</h2>
+        <p class="work-meta">
+          Fiction · Short story · PDF
+        </p>
+
+        <p>
+          A FINAL DREAM is a short story exploring the boundaries of autofiction, dreams, and memory.
+          It’s interested in the way a voice can feel intimate while still being unreliable—how
+          sincerity and construction can coexist on the same page.
+        </p>
+
+        <p>
+          On the surface, the piece is quiet: a small emotional chamber with soft edges.
+          Underneath, it’s an experiment in how much narrative weight can be carried by texture,
+          rhythm, and the accumulation of small sensory details.
+        </p>
+
+        <p>
+          Formally, I approached it with restraint—letting the “dream logic” show up less as surreal
+          imagery and more as a subtle drift in causality and attention.
+        </p>
+
+        <p>
+          What I care about most here is the aftertaste: the feeling that something precise happened,
+          even if you can’t fully paraphrase it.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: SCROLLABLE INDEX OF WORKS (text-only) -->
+    <aside class="works">
+      <h2>WORKS</h2>
+
+      <div class="works-scroll">
+
+        <!-- Fiction -->
+        <div class="work-item">
+          <div class="work-top">
+            <strong>A Final Dream</strong>
+            <span class="work-tag">Fiction</span>
+          </div>
+          <p class="work-subtitle">Autofiction · dreams · memory</p>
+          <a class="work-link" href="./AFinalDreamFinalDraft.pdf" target="_blank" rel="noopener">Read →</a>
+        </div>
+
+        <!-- Hybrid -->
+        <div class="work-item">
+          <div class="work-top">
+            <strong>Sardines</strong>
+            <span class="work-tag">Hybrid</span>
+          </div>
+          <p class="work-subtitle">Metaphorical musings · Seafood review</p>
+          <a class="work-link" href="./sardine_review/sardine_review.html">Enter →</a>
+        </div>
+
+        <div class="work-item">
+          <div class="work-top">
+            <strong>Manouchehr's Dream Journal</strong>
+            <span class="work-tag">Hybrid</span>
+          </div>
+          <p class="work-subtitle">Subconscious authorship · Pseudofiction</p>
+          <a class="work-link" href="#">Enter →</a>
+        </div>
+
+        <div class="work-item">
+          <div class="work-top">
+            <strong>Hybrid Project Number Three</strong>
+            <span class="work-tag">Hybrid</span>
+          </div>
+          <p class="work-subtitle">un · defined</p>
+          <a class="work-link" href="#">Enter →</a>
+        </div>
+
+        <!-- Essays -->
+        <div class="work-item">
+          <div class="work-top">
+            <strong>Phenomenology of Perception: Art and Perception</strong>
+            <span class="work-tag">Essay</span>
+          </div>
+          <p class="work-subtitle">Merleau-Ponty · Cézanne · perception</p>
+          <a class="work-link" href="./MerleauPontyEssay.pdf" target="_blank" rel="noopener">Read →</a>
+        </div>
+
+        <div class="work-item">
+          <div class="work-top">
+            <strong>On Huemer's Moral Realism</strong>
+            <span class="work-tag">Essay</span>
+          </div>
+          <p class="work-subtitle">Phenomenal conservatism · moral realism</p>
+          <a class="work-link" href="./HuemerEssay.pdf" target="_blank" rel="noopener">Read →</a>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- BOTTOM HOME BUTTON (Film-like footer) -->
+  <footer class="writing-footer">
+    <a href="../index.html">← Home</a>
+  </footer>
+
+</body>
+</html>
