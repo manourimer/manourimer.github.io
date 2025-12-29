@@ -179,3 +179,51 @@ h1{
   font-size: 13px;
 }
 
+.no-scroll{ overflow: hidden; }
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+}
+
+.lightbox.is-open{ display: block; }
+
+.lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(11,18,32,.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.lightbox-figure{
+  position: relative;
+  z-index: 2001;
+  margin: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lightbox-figure img{
+  max-width: min(1100px, 92vw);
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+  background: white;
+}
+
+.lightbox-caption{
+  margin-top: 12px;
+  max-width: min(1100px, 92vw);
+  color: rgba(255,255,255,.88);
+  font-size: 14px;
+  text-align: center;
+}
+
+
