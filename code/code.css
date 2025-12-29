@@ -1,0 +1,291 @@
+/* =========================
+   code.css
+   Cohesive with Film template:
+   - same sky background
+   - same 3-col grid layout + responsive collapse
+   - IBM Plex Sans overall
+   - Courier Prime for the left “note”
+   - VT323 only for the big header
+   ========================= */
+
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #8BDDFD;
+  --ink: #111;
+  --muted: #444;
+  --border: rgba(0,0,0,0.18);
+  --shadow: rgba(0,0,0,0.12);
+  --radius: 14px;
+}
+
+/* Page base */
+body.code{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* =========================
+   TOPBAR (Home button at top)
+   ========================= */
+.topbar{
+  /* Keep it light; Film page doesn’t have this, so we make it subtle */
+  padding: 18px 18px 0;
+}
+
+.topbar-home{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: #000;
+  background: rgba(255,255,255,0.15);
+}
+
+.topbar-home:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+/* =========================
+   HERO (match Film: centered title + small tagline)
+   ========================= */
+.code-hero{
+  text-align: center;
+  margin: 40px 0 50px;
+}
+
+.code-hero h1{
+  margin: 0;
+  font-family: "VT323", monospace;
+  font-size: 56px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.code-tagline{
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   LAYOUT (same grid logic as Film)
+   ========================= */
+.code-layout{
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 40px;
+}
+
+/* =========================
+   LEFT NOTE (Film-like)
+   ========================= */
+.code-note{
+  /* No big border box; Film’s note is calm and typographic */
+}
+
+.code-note h2{
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.code-note p{
+  margin: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Optional helpers if you want later */
+/*
+.note-divider{
+  margin: 18px 0 14px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+.note-small{
+  font-family: "Courier Prime", monospace;
+  font-size: 10px;
+  color: var(--muted);
+}
+*/
+
+/* =========================
+   CENTER FEATURED
+   ========================= */
+.featured{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.featured-label{
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* “TV frame” (adapted from Film’s .video-frame) */
+.tv-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 2px solid #000;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.22),
+    0 0 32px rgba(0,0,0,0.18);
+}
+
+.tv-frame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* subtle screen sheen */
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.00) 45%,
+    rgba(255,255,255,0.06)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+}
+
+.tv-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Featured info (mirror Film’s hierarchy) */
+.featured-info h2{
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.featured-meta{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.featured-info p{
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+/* =========================
+   RIGHT TIMELINE (Film-like scroll)
+   ========================= */
+.timeline{
+  position: relative;
+}
+
+.timeline h2{
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+
+/* scroll container */
+.timeline-scroll{
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* scrollbar styling (Chrome/Safari) */
+.timeline-scroll::-webkit-scrollbar{ width: 10px; }
+.timeline-scroll::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.20);
+  border-radius: 999px;
+}
+.timeline-scroll::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.05);
+}
+
+/* Make each item a link but keep Film’s look */
+.timeline-item{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 24px;
+}
+
+.timeline-item img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #000;
+  margin-bottom: 8px;
+}
+
+.timeline-item p{
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.timeline-item:hover img{
+  /* tiny affordance without changing the Film aesthetic */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   FOOTER (Film-like)
+   ========================= */
+.code-footer{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.code-footer a{
+  color: #000;
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE (same logic as Film)
+   ========================= */
+@media (max-width: 900px){
+  .code-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* show featured first, then the side columns */
+  .code-note,
+  .timeline{
+    order: 2;
+  }
+  .featured{
+    order: 1;
+  }
+
+  .code-hero h1{
+    font-size: 64px;
+  }
+
+  .topbar{
+    padding-top: 14px;
+  }
+}
