@@ -686,6 +686,18 @@
       scan.addEventListener("click", () => scan.classList.toggle("is-open"));
     });
   </script>
+  <!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-close></div>
+
+  <figure class="lightbox-figure" role="dialog" aria-modal="true">
+    <img id="lightboxImg" alt="">
+    <figcaption class="lightbox-caption" id="lightboxCap"></figcaption>
+  </figure>
+</div>
+
+  
+  
 </body>
 </html>
 
