@@ -71,6 +71,12 @@ h1{
   margin: 0;          /* don’t offset individual cards in a grid */
  
 }
+.scan img{
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* tweak: 4/5, 1/1, etc */
+  object-fit: cover;
+  display: block;
+}
 @media (max-width: 980px){
   .grid{ grid-template-columns: repeat(2, 1fr); }
 }
