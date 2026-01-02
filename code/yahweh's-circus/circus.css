@@ -1,0 +1,317 @@
+/* =========================
+   circus.css
+   Film-template structure, Yahweh’s Circus skin
+   - Background image stays on desktop + mobile
+   - Henny Penny lime headings
+   - IBM Plex Sans body
+   - Right column scroll rail for screenshots
+   ========================= */
+
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #05050a;
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.72);
+
+  --lime: #7CFF4A; /* tweak if you want a different lime */
+  --line: rgba(255,255,255,0.18);
+  --line2: rgba(255,255,255,0.12);
+
+  --shadow: rgba(0,0,0,0.55);
+  --radius: 14px;
+}
+
+/* Page base */
+body.circus{
+  margin: 0;
+  color: var(--text);
+
+  background-color: var(--bg);
+  background-image: url("./YahwehsCircus.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.7;
+}
+
+/* Keep image on mobile; allow scroll attachment for stability */
+@media (max-width: 900px){
+  body.circus{
+    background-attachment: scroll;
+  }
+}
+
+/* =========================
+   TOPBAR
+   ========================= */
+.topbar{
+  padding: 18px 18px 0;
+}
+
+.topbar-back{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 12px;
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(0,0,0,0.22);
+}
+
+.topbar-back:hover{
+  border-color: var(--line);
+}
+
+/* =========================
+   HERO (Film-like centered)
+   ========================= */
+.circus-hero{
+  text-align: center;
+  margin: 46px 0 44px;
+  padding: 0 24px;
+}
+
+.circus-hero h1{
+  margin: 0;
+  font-family: "Henny Penny", system-ui;
+  font-size: 72px;
+  letter-spacing: 1px;
+  line-height: 0.98;
+  color: var(--lime);
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.circus-tagline{
+  margin: 10px auto 6px;
+  max-width: 820px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.circus-meta{
+  margin: 0 auto;
+  max-width: 820px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =========================
+   3-COLUMN LAYOUT (Film-like)
+   ========================= */
+.circus-layout{
+  max-width: 1400px;
+  margin: 0 auto 70px;
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 40px;
+}
+
+/* H2 headings in Henny Penny lime */
+body.circus h2{
+  margin: 0 0 12px;
+  font-family: "Henny Penny", system-ui;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+  color: var(--lime);
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+/* Vertical spacing */
+.circus-left section,
+.circus-center section{
+  margin-bottom: 28px;
+}
+
+/* Paragraph spacing */
+body.circus p{
+  margin: 0 0 14px;
+}
+
+/* Links */
+body.circus a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255,255,255,0.32);
+  padding-bottom: 2px;
+}
+
+body.circus a:hover{
+  border-bottom-color: rgba(255, 70, 190, 0.85);
+}
+
+/* Lists */
+.circus-list,
+.circus-steps,
+.circus-links{
+  margin: 10px 0 0 22px;
+}
+
+/* Code styling (keep readable; not Henny Penny for body text) */
+body.circus code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+  padding: 0 6px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* =========================
+   CENTER: Featured demo (16:9 “TV frame”)
+   ========================= */
+.featured-label{
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.demo-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,0.25),
+    0 0 28px rgba(90, 220, 255, 0.10),
+    0 0 28px rgba(255, 70, 190, 0.10),
+    0 18px 60px rgba(0,0,0,0.55);
+
+  margin-bottom: 26px;
+}
+
+.demo-frame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.00) 45%,
+    rgba(255,255,255,0.06)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.28;
+}
+
+.demo-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================
+   RIGHT: Screenshots scroll rail
+   ========================= */
+.shots-scroll{
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar (Chrome/Safari) */
+.shots-scroll::-webkit-scrollbar{ width: 10px; }
+.shots-scroll::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.22);
+  border-radius: 999px;
+}
+.shots-scroll::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.22);
+}
+
+.shot{
+  margin-bottom: 20px;
+}
+
+.shot img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,0.25),
+    0 0 18px rgba(255, 70, 190, 0.10),
+    0 14px 40px rgba(0,0,0,0.55);
+
+  image-rendering: pixelated;
+}
+
+.shot-cap{
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.circus-footer{
+  text-align: center;
+  padding: 0 24px 44px;
+}
+
+.circus-footer a{
+  color: var(--text);
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+.circus-footer a:hover{
+  opacity: 0.9;
+}
+
+.dot{
+  color: var(--muted);
+  margin: 0 10px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 900px){
+  .circus-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* Order: center first, then left, then screenshots */
+  .circus-center{ order: 1; }
+  .circus-left{ order: 2; }
+  .circus-right{ order: 3; }
+
+  .circus-hero h1{
+    font-size: 46px;
+  }
+
+  body.circus h2{
+    font-size: 26px;
+  }
+
+  .shots-scroll{
+    max-height: none; /* let it flow on mobile */
+    padding-right: 0;
+  }
+}
