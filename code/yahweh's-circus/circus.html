@@ -1,0 +1,146 @@
+<!-- =========================
+     circus.html
+     Film-template layout for an individual CODE project page
+     - Keep YahwehsCircus.png background on desktop + mobile
+     - Henny Penny lime for main + section headings
+     - IBM Plex Sans for ALL body text
+     - Left: Highlights + How to run + Links
+     - Center: Featured demo + Logline + What it is + Motivation
+     - Right: Scrollable screenshots rail (placeholders)
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yahweh’s Circus — Manou Rimer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+
+  <!-- Optional shared site styles -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- Page-specific -->
+  <link rel="stylesheet" href="./circus.css">
+</head>
+
+<body class="circus">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a class="topbar-back" href="../code.html">← Back to Code</a>
+  </header>
+
+  <!-- HERO (Film-like centered) -->
+  <header class="circus-hero">
+    <h1>YAHWEH’S CIRCUS</h1>
+    <p class="circus-tagline">
+      Interactive world (ChuGL) — Music Sequencer — 2025
+    </p>
+    <p class="circus-meta">
+      <strong>Role:</strong> Creator · <strong>Tools:</strong> ChuGL, ChucK · <strong>Format:</strong> Interactive environment
+    </p>
+  </header>
+
+  <!-- MAIN LAYOUT (Film-like 3 columns) -->
+  <main class="circus-layout">
+
+    <!-- LEFT COLUMN -->
+    <aside class="circus-left">
+
+      <section id="highlights">
+        <h2>HIGHLIGHTS</h2>
+        <ul class="circus-list">
+          <li>Live musical sequencer component</li>
+          <li>Audio-driven mood shifts + reactive visuals</li>
+          <li>Stylized worldbuilding: carnival aesthetics, sacred geometry, surreal props</li>
+        </ul>
+      </section>
+
+      <section id="run">
+        <h2>HOW TO RUN (macOS)</h2>
+        <ol class="circus-steps">
+          <li>Download the project ZIP file.</li>
+          <li>Unzip the folder.</li>
+          <li>Run via terminal / follow your local instructions (placeholder line).</li>
+          <li>Use WASD / arrow keys to move, and follow on-screen prompts.</li>
+        </ol>
+      </section>
+
+      <section id="links">
+        <h2>LINKS</h2>
+        <ul class="circus-links">
+          <li><a href="../zips/yahwehs-circus.zip" download>Download project files (ZIP)</a></li>
+          <li>
+            <a href="https://github.com/manourimer/YOUR_REPO" target="_blank" rel="noopener noreferrer">
+              Source / code (GitHub)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- CENTER COLUMN -->
+    <section class="circus-center">
+
+      <div class="featured-label">FEATURED DEMO</div>
+
+      <div class="demo-frame">
+        <iframe
+          src="https://www.youtube.com/embed/KnfJsiiIrf8"
+          title="Yahweh’s Circus demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <section id="logline">
+        <h2>LOGLINE</h2>
+        <p>
+          A surreal, “holy carnival” where prayers become notes that can be dropped inside the circus
+          to compose songs. Part ritual, part playground.
+        </p>
+      </section>
+
+      <section id="what">
+        <h2>WHAT IT IS</h2>
+        <p>
+          Yahweh’s Circus is an interactive world which acts as a 3D sequencer. The player navigates
+          the circus and places notes within the space to sequence.
+        </p>
+        <p>
+          The project explores how interface, spectacle, and narrative can merge into a playable
+          environment—and how story can be incorporated into an otherwise functional tool.
+        </p>
+      </section>
+
+      <section id="motivation">
+        <h2>MOTIVATION</h2>
+        <p>
+          I wanted the “tool” to feel like a place: composition as movement, rhythm as architecture,
+          and sound design as atmosphere—so that making music becomes a kind of wandering ritual.
+        </p>
+        <p>
+          The aim is to collapse interface into worldbuilding: the sequencer isn’t a panel you open,
+          it’s the carnival itself.
+        </p>
+      </section>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Screenshots rail -->
+    <aside class="circus-right">
+      <h2>SCREENSHOTS</h2>
+
+      <div class="shots-scroll">
+        <!-- Placeholder entries: swap paths when ready -->
+        <div class="shot">
+          <img src="./screenshot-1.png" alt="Yahweh’s Circus screenshot 1 (placeholder)">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./screenshot-2.png"
