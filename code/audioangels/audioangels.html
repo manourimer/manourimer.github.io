@@ -1,0 +1,170 @@
+<!-- =========================
+     audioangels.html
+     Film-template layout for an individual CODE project page
+     - Keep Audio Angels vibe (scanlines / phosphor)
+     - Cinzel for main + section headings (like your current page)
+     - IBM Plex Sans for ALL body text
+     - Left: Highlights + How to run + Links
+     - Center: Featured demo + Logline + What it is + Motivation
+     - Right: Scrollable stills rail (uses your existing stills)
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Angels — Manou Rimer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=VT323&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Optional shared site stylesheet -->
+  <link rel="stylesheet" href="../../style.css">
+  <!-- Page stylesheet -->
+  <link rel="stylesheet" href="./audioangels.css">
+</head>
+
+<body class="audioangels">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a class="topbar-back" href="../code.html">← Back to Code</a>
+  </header>
+
+  <!-- HERO (Film-like centered) -->
+  <header class="aa-hero">
+    <h1>AUDIO ANGELS</h1>
+    <p class="aa-tagline">Biblically accurate audiovisualizer (ChuGL / ChucK) — 2025</p>
+    <p class="aa-meta">
+      <strong>Role:</strong> Creator ·
+      <strong>Tools:</strong> ChucK, ChuGL ·
+      <strong>Format:</strong> Real-time audiovisual program
+    </p>
+  </header>
+
+  <!-- MAIN LAYOUT (Film-like 3 columns) -->
+  <main class="aa-layout">
+
+    <!-- LEFT COLUMN -->
+    <aside class="aa-left">
+
+      <section id="highlights">
+        <h2>HIGHLIGHTS</h2>
+        <ul class="aa-list">
+          <li>Real-time audio → visual mapping (intensity, spectral energy, rhythmic events)</li>
+          <li>Low-poly “angel” geometry + orbiting motifs (wheels / eyes / halos / rings)</li>
+          <li>Analog horror treatment: scanlines, bloom, jitter, vignette, “tape” noise</li>
+          <li>Modes / states (e.g., Heaven / Earth / Hell) with distinct palettes + motion rules</li>
+        </ul>
+      </section>
+
+      <section id="run">
+        <h2>HOW TO RUN (macOS)</h2>
+        <ol class="aa-steps">
+          <li>Download the project ZIP.</li>
+          <li>Unzip the folder.</li>
+          <li>Double-click <code>Executable.command</code>.</li>
+          <li>Use the on-screen instructions (or your controls) to switch modes / trigger cues.</li>
+        </ol>
+      </section>
+
+      <section id="links">
+        <h2>LINKS</h2>
+        <ul class="aa-links">
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Download project files (ZIP)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Source / code (GitHub)</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Short write-up / notes</a></li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- CENTER COLUMN -->
+    <section class="aa-center">
+
+      <div class="featured-label">FEATURED DEMO</div>
+
+      <!-- Demo frame (16:9) -->
+      <div class="demo-frame">
+        <iframe
+          src="https://www.youtube.com/embed/f9QNZJl4_Hw"
+          title="Audio Angels demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <section id="logline">
+        <h2>LOGLINE</h2>
+        <p>
+          A real-time “biblically accurate angel” audiovisualizer: low-poly forms, ritual geometry,
+          and unstable analog artifacts synchronized to generative audio.
+        </p>
+      </section>
+
+      <section id="what">
+        <h2>WHAT IT IS</h2>
+        <p>
+          Built in ChucK + ChuGL, <em>Audio Angels</em> is a live audiovisual program that treats sound as a liturgy:
+          drones, pulses, and harmonic tension drive a shifting celestial architecture—equal parts reverent and wrong.
+        </p>
+      </section>
+
+      <section id="motivation">
+        <h2>MOTIVATION</h2>
+        <p>
+          I wanted to make an audiovisual system that feels like a ritual rather than a “visualizer”:
+          a space where sound is not background, but causality—where every spectral swell changes the world’s theology.
+        </p>
+        <p>
+          The analog treatment is deliberate: it frames the divine as a broadcast—beautiful, unstable, and slightly corrupted.
+        </p>
+      </section>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Scrollable stills rail -->
+    <aside class="aa-right">
+      <h2>STILLS</h2>
+
+      <div class="shots-scroll">
+        <div class="shot">
+          <img src="./AudioAngel2.png" alt="Audio Angels still 1">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./AudioAngel1.png" alt="Audio Angels still 2">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./AudioAngel3.png" alt="Audio Angels still 3">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <!-- Duplicate as needed -->
+        <!--
+        <div class="shot">
+          <img src="./AudioAngel4.png" alt="Audio Angels still 4">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+        -->
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="aa-footer">
+    <a href="../code.html">← Back to Code</a>
+    <span class="dot">·</span>
+    <a href="../index.html">Home</a>
+    <span class="dot">·</span>
+    <a href="mailto:manourimer@gmail.com">Email</a>
+    <span class="dot">·</span>
+    <a href="https://github.com/manourimer" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+
+</body>
+</html>
