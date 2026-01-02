@@ -8,7 +8,7 @@
    - Right column scroll rail for screenshots
    ========================= */
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; } 
 
 :root{
   --bg: #07070a;
