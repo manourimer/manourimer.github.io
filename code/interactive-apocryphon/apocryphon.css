@@ -13,10 +13,10 @@
 :root{
   --bg: #07070a;
   --accent: #ff2a2a;       /* red for headings */
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.72);
-  --line: rgba(255,255,255,0.18);
-  --line2: rgba(255,255,255,0.12);
+  --text: rgba(0,0,0,0.92);
+  --muted: rgba(0,0,0,0.72);
+  --line: rgba(0,0,0,0.18);
+  --line2: rgba(0,0,0,0.12);
   --shadow: rgba(0,0,0,0.55);
   --radius: 14px;
 }
