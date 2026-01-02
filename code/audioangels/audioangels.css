@@ -1,0 +1,329 @@
+/* =========================
+   audioangels.css
+   Film-template structure, Audio Angels skin
+   - Keep your phosphor/scanline vibe
+   - Cinzel headings
+   - IBM Plex Sans body
+   - 3-column layout + right scroll rail
+   ========================= */
+
+* { box-sizing: border-box; }
+
+:root{
+  --text: rgba(245,245,245,0.92);
+  --muted: rgba(245,245,245,0.72);
+  --line: rgba(255,255,255,0.14);
+  --line2: rgba(255,255,255,0.10);
+  --shadow: rgba(0,0,0,0.55);
+  --radius: 14px;
+}
+
+/* Page base */
+body.audioangels{
+  margin: 0;
+
+  /* typography */
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  line-height: 1.7;
+
+  /* palette */
+  color: var(--text);
+  background-color: #2727F5;
+
+  /* background: dark chapel + faint phosphor */
+  background-image:
+    radial-gradient(900px 450px at 50% 0%, rgba(255,255,255,0.06), rgba(0,0,0,0) 55%),
+    radial-gradient(700px 700px at 10% 20%, rgba(160,255,230,0.06), rgba(0,0,0,0) 60%),
+    radial-gradient(700px 700px at 90% 40%, rgba(255,180,220,0.05), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  background-attachment: fixed;
+}
+
+/* subtle scanlines + grain (CSS only) */
+body.audioangels::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    );
+  mix-blend-mode: overlay;
+}
+
+body.audioangels::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), rgba(0,0,0,0) 42%),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.28), rgba(0,0,0,0) 38%);
+  mix-blend-mode: overlay;
+}
+
+/* =========================
+   TOPBAR
+   ========================= */
+.topbar{
+  padding: 18px 18px 0;
+}
+
+.topbar-back{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 10px 12px;
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(0,0,0,0.22);
+}
+
+.topbar-back:hover{
+  border-color: var(--line);
+}
+
+/* =========================
+   HERO (Film-like centered)
+   ========================= */
+.aa-hero{
+  text-align: center;
+  margin: 46px 0 44px;
+  padding: 0 24px;
+}
+
+body.audioangels h1{
+  font-family: "Cinzel", serif;
+  letter-spacing: 1.2px;
+  font-size: 56px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 22px rgba(170,255,235,0.18),
+    0 0 42px rgba(255,190,230,0.10);
+}
+
+.aa-tagline{
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.aa-meta{
+  margin: 0;
+  color: rgba(245,245,245,0.70);
+  font-size: 13px;
+}
+
+/* =========================
+   LAYOUT (Film-like 3 columns)
+   ========================= */
+.aa-layout{
+  max-width: 1400px;
+  margin: 0 auto 70px;
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 40px;
+}
+
+/* Headings */
+body.audioangels h2{
+  font-family: "Cinzel", serif;
+  font-size: 34px;
+  letter-spacing: 0.8px;
+  margin: 0 0 10px;
+  color: rgba(245,245,245,0.95);
+  text-shadow: 0 0 14px rgba(160,255,230,0.10);
+  text-transform: uppercase;
+}
+
+/* Spacing */
+.aa-left section,
+.aa-center section{
+  margin-bottom: 28px;
+}
+
+/* Links */
+body.audioangels a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(245,245,245,0.22);
+}
+body.audioangels a:hover{
+  border-bottom-color: rgba(245,245,245,0.85);
+}
+
+/* Lists */
+body.audioangels ul,
+body.audioangels ol{
+  margin: 10px 0 0 22px;
+}
+
+body.audioangels code{
+  font-family: "VT323", monospace;
+  font-size: 1.15em;
+  padding: 0 6px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* =========================
+   CENTER: Featured demo frame (16:9)
+   ========================= */
+.featured-label{
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.demo-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+
+  box-shadow:
+    0 0 0 6px rgba(0,0,0,0.30),
+    0 0 26px rgba(160,255,230,0.10),
+    0 0 26px rgba(255,190,230,0.08),
+    0 18px 60px rgba(0,0,0,0.55);
+
+  margin-bottom: 26px;
+}
+
+.demo-frame::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(0,0,0,0.0) 40%,
+    rgba(255,255,255,0.06)
+  );
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+.demo-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================
+   RIGHT: Stills scroll rail
+   ========================= */
+.shots-scroll{
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar (Chrome/Safari) */
+.shots-scroll::-webkit-scrollbar{ width: 10px; }
+.shots-scroll::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.22);
+  border-radius: 999px;
+}
+.shots-scroll::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.22);
+}
+
+.shot{
+  margin-bottom: 20px;
+}
+
+.shot img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 0 5px rgba(0,0,0,0.25),
+    0 0 18px rgba(255, 190, 230, 0.10),
+    0 14px 40px rgba(0,0,0,0.55);
+
+  image-rendering: pixelated;
+}
+
+.shot-cap{
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.aa-footer{
+  text-align: center;
+  padding: 0 24px 44px;
+}
+
+.aa-footer a{
+  color: var(--text);
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+.aa-footer a:hover{
+  opacity: 0.9;
+}
+
+.dot{
+  color: var(--muted);
+  margin: 0 10px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 900px){
+  .aa-layout{
+    grid-template-columns: 1fr;
+  }
+
+  /* Order: center first, then left, then stills */
+  .aa-center{ order: 1; }
+  .aa-left{ order: 2; }
+  .aa-right{ order: 3; }
+
+  body.audioangels h1{
+    font-size: 46px;
+  }
+
+  body.audioangels h2{
+    font-size: 26px;
+  }
+
+  .shots-scroll{
+    max-height: none;
+    padding-right: 0;
+  }
+}
