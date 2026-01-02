@@ -15,7 +15,7 @@ body.home {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -70,6 +70,10 @@ a {
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
+.block p a {
+  text-decoration: underline;
+}
+
 .logos img {
   max-width: 280px;
   width: 100%;
