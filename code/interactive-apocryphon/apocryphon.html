@@ -1,1 +1,182 @@
+<!-- =========================
+     apocryphon.html
+     Film-template layout for an individual CODE project page
+     - Keep EDEN background on desktop + mobile
+     - VT323 red for main + section headings
+     - IBM Plex Sans for ALL body text
+     - Left: Highlights + How to run + Links
+     - Center: Featured demo (16:9) + Logline + What it is + Motivation
+     - Right: Scrollable screenshots rail (placeholders)
+     ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Apocryphon — Manou Rimer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Optional shared site styles (keep if you rely on it elsewhere) -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="./apocryphon.css">
+</head>
+
+<body class="apocryphon">
+
+  <!-- TOPBAR (consistent navigation affordance) -->
+  <header class="topbar">
+    <a class="topbar-back" href="../code.html">← Back to Code</a>
+  </header>
+
+  <!-- HERO (Film-like centered) -->
+  <header class="apoc-hero">
+    <h1>THE APOCRYPHON OF JOHN</h1>
+    <p class="apoc-tagline">
+      Interactive audiovisual narrative (ChuGL) — Gnostic-inspired — 2025
+    </p>
+    <p class="apoc-meta">
+      <strong>Role:</strong> Creator · <strong>Tools:</strong> ChuGL, ChucK · <strong>Format:</strong> Interactive audiovisual narrative
+    </p>
+  </header>
+
+  <!-- MAIN LAYOUT (Film-like 3 columns) -->
+  <main class="apoc-layout">
+
+    <!-- LEFT COLUMN: Utility / How to engage -->
+    <aside class="apoc-left">
+
+      <section id="highlights">
+        <h2>HIGHLIGHTS</h2>
+        <ul class="apoc-list">
+          <li>Scene-based interactive structure with mini-games gating progression</li>
+          <li>Procedural camera movement + player navigation</li>
+          <li>Real-time audio + visual synchronization</li>
+          <li>Symbolic “cosmology” environments (Pleroma / Sophia / Demiurge motifs)</li>
+        </ul>
+      </section>
+
+      <section id="run">
+        <h2>HOW TO RUN (macOS)</h2>
+        <ol class="apoc-steps">
+          <li>Download the project ZIP file.</li>
+          <li>Unzip the folder.</li>
+          <li>Double-click <code>Executable.command</code>.</li>
+          <li>Use WASD / arrow keys to move, the keyboard to type text, and the cursor to click on objects.</li>
+        </ol>
+      </section>
+
+      <section id="links">
+        <h2>LINKS</h2>
+        <ul class="apoc-links">
+          <li><a href="#">Download project files (ZIP)</a></li>
+          <li><a href="#">Source / code (GitHub)</a></li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <!-- CENTER COLUMN: Featured demo + writeup -->
+    <section class="apoc-center">
+
+      <div class="featured-label">FEATURED DEMO</div>
+
+      <!-- Featured demo frame (same size logic as other pages: 16:9) -->
+      <div class="demo-frame">
+        <iframe
+          src="https://www.youtube.com/embed/hxMdnFJQAj0"
+          title="Interactive Apocryphon demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <section id="logline">
+        <h2>LOGLINE</h2>
+        <p>
+          A (minimally) interactive audiovisual exposé on the
+          <a href="http://www.gnosis.org/naghamm/apocjn-davies.html" target="_blank" rel="noopener">
+            Apocryphon of John
+          </a>.
+        </p>
+      </section>
+
+      <section id="what">
+        <h2>WHAT IT IS</h2>
+        <p>
+          Built in ChuGL (ChucK + graphics), the project blends narrative animation with interaction.
+          The player progresses through scenes inspired by the <em>Apocryphon of John</em>, completing
+          small tasks to advance the story.
+        </p>
+        <p>
+          Script, music, and pixel art are all original. Voiced by Amy Wang and Komi Ergashev.
+        </p>
+      </section>
+
+      <section id="motivation">
+        <h2>MOTIVATION</h2>
+        <p>
+          I wanted to treat a text like an explorable space: not an adaptation that “summarizes,”
+          but a system that lets tone, symbolism, and constraint do narrative work.
+        </p>
+        <p>
+          The goal was to build something emotionally legible while staying formally strange—where
+          meaning emerges through repeated gestures, small tasks, and audiovisual motifs.
+        </p>
+      </section>
+
+      <!-- Optional: bottom CTA could live here later (download / play now) -->
+      <!--
+      <div class="center-cta">
+        <a class="btn" href="#">Play / Download →</a>
+      </div>
+      -->
+
+    </section>
+
+    <!-- RIGHT COLUMN: Scrollable screenshot rail -->
+    <aside class="apoc-right">
+
+      <h2>SCREENSHOTS</h2>
+
+      <div class="shots-scroll">
+        <!-- Placeholders: duplicate/edit as needed -->
+        <div class="shot">
+          <img src="./screenshot-1.png" alt="Apocryphon screenshot 1 (placeholder)">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./screenshot-2.png" alt="Apocryphon screenshot 2 (placeholder)">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./screenshot-3.png" alt="Apocryphon screenshot 3 (placeholder)">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+
+        <div class="shot">
+          <img src="./screenshot-4.png" alt="Apocryphon screenshot 4 (placeholder)">
+          <p class="shot-cap">Placeholder caption (optional)</p>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- FOOTER (simple, consistent) -->
+  <footer class="apoc-footer">
+    <a href="../code.html">← Back to Code</a>
+    <span class="dot">·</span>
+    <a href="../index.html">Home</a>
+  </footer>
+
+</body>
+</html>
 
