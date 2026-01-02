@@ -102,6 +102,18 @@ body.circus{
   font-size: 13px;
   color: var(--muted);
 }
+/* Force center alignment for the hero text lines */
+.circus-hero { 
+  text-align: center !important;
+}
+
+.circus-tagline,
+.circus-meta {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* =========================
    3-COLUMN LAYOUT (Film-like)
