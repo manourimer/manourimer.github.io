@@ -14,6 +14,20 @@
       --ink-faint: rgba(250,249,247,0.12);
       --paper: #0a0a0a;
       --accent: #faf9f7;
+      --panel-hover: #161616;
+      --hero-bio: rgba(250,249,247,0.72);
+      --body-secondary: rgba(250,249,247,0.6);
+      --tooltip-bg: #faf9f7;
+      --tooltip-ink: #0a0a0a;
+      --map-bg: #0a0a0a;
+      --map-strong: #faf9f7;
+      --map-empty: #0a0a0a;
+      --map-edge: rgba(250,249,247,0.15);
+      --map-edge-dim: rgba(250,249,247,0.04);
+      --map-edge-soft: rgba(250,249,247,0.35);
+      --map-edge-bright: rgba(250,249,247,0.8);
+      --map-soft-fill: rgba(250,249,247,0.55);
+      --map-faded-opacity: 0.12;
       --serif: "Times New Roman", Times, Georgia, serif;
       --mono: "IBM Plex Mono", monospace;
       --max: 780px;
@@ -24,6 +38,32 @@
       --hero-faint: rgba(250,249,247,0.12);
     }
 
+    [data-theme="light"] {
+      --ink: #0a0a0a;
+      --ink-muted: #656018;
+      --ink-faint: #d1cf32;
+      --paper: #FFFE3D;
+      --accent: #0a0a0a;
+      --panel-hover: #f2f12f;
+      --hero-bg: #FFFE3D;
+      --hero-ink: #0a0a0a;
+      --hero-muted: #656018;
+      --hero-faint: #d1cf32;
+      --hero-bio: #363409;
+      --body-secondary: #5b5614;
+      --tooltip-bg: #0a0a0a;
+      --tooltip-ink: #FFFE3D;
+      --map-bg: #f2f12f;
+      --map-strong: #0a0a0a;
+      --map-empty: #FFFE3D;
+      --map-edge: #c5c22b;
+      --map-edge-dim: #e3e13a;
+      --map-edge-soft: #8f8a20;
+      --map-edge-bright: #171605;
+      --map-soft-fill: #9d9722;
+      --map-faded-opacity: 0.28;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -32,6 +72,7 @@
       color: var(--ink);
       line-height: 1.75;
       font-size: 17px;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -40,6 +81,29 @@
     .hero-block {
       background: var(--hero-bg);
       color: var(--hero-ink);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hero-muted);
+      background: var(--paper);
+      border: 1px solid var(--hero-faint);
+      padding: 6px 9px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background 0.2s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--hero-ink);
+      border-color: var(--hero-ink);
     }
 
     header {
@@ -117,7 +181,7 @@
     .hero-bio {
       max-width: 540px;
       font-size: 17px;
-      color: rgba(250,249,247,0.72);
+      color: var(--hero-bio);
       line-height: 1.8;
       margin-bottom: 36px;
     }
@@ -178,7 +242,7 @@
       transition: background 0.2s;
     }
 
-    .selected-card:hover { background: #161616; }
+    .selected-card:hover { background: var(--panel-hover); }
 
     .selected-card-type {
       font-family: var(--mono);
@@ -276,7 +340,7 @@
       cursor: grab;
       user-select: none;
       border: 1px solid var(--ink-faint);
-      background: #0a0a0a;
+      background: var(--map-bg);
     }
 
     #map-canvas:active { cursor: grabbing; }
@@ -293,8 +357,8 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: #faf9f7;
-      color: #0a0a0a;
+      background: var(--tooltip-bg);
+      color: var(--tooltip-ink);
       font-family: var(--serif);
       font-size: 14px;
       line-height: 1.55;
@@ -357,7 +421,7 @@
 
     .timeline-desc {
       font-size: 14px;
-      color: rgba(250,249,247,0.6);
+      color: var(--body-secondary);
       line-height: 1.65;
       margin-bottom: 14px;
       margin-top: 10px;
@@ -475,6 +539,12 @@
     @media (max-width: 600px) {
       :root { --gutter: 20px; }
       header { flex-direction: column; gap: 16px; }
+      .theme-toggle {
+        top: 12px;
+        right: 12px;
+        font-size: 9px;
+        padding: 5px 8px;
+      }
       .selected-grid { grid-template-columns: 1fr; }
       .footer-links { align-items: flex-start; }
     }
@@ -483,6 +553,7 @@
 <body>
 
   <div class="hero-block">
+  <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
 
   <!-- HEADER -->
   <header>
@@ -663,6 +734,39 @@
 
   <script>
   (function() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    let syncGraphTheme = () => {};
+
+    function setTheme(theme) {
+      const isLight = theme === 'light';
+      document.documentElement.dataset.theme = isLight ? 'light' : '';
+      themeToggle.textContent = isLight ? 'Dark mode' : 'Light mode';
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+      try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (error) {}
+      syncGraphTheme();
+    }
+
+    function getThemeColors() {
+      const styles = getComputedStyle(document.documentElement);
+      return {
+        strong: styles.getPropertyValue('--map-strong').trim(),
+        empty: styles.getPropertyValue('--map-empty').trim(),
+        edge: styles.getPropertyValue('--map-edge').trim(),
+        edgeDim: styles.getPropertyValue('--map-edge-dim').trim(),
+        edgeSoft: styles.getPropertyValue('--map-edge-soft').trim(),
+        edgeBright: styles.getPropertyValue('--map-edge-bright').trim(),
+        softFill: styles.getPropertyValue('--map-soft-fill').trim(),
+        fadedOpacity: styles.getPropertyValue('--map-faded-opacity').trim()
+      };
+    }
+
+    let savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (error) {}
+    setTheme(savedTheme);
+    themeToggle.addEventListener('click', () => {
+      setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+    });
+
     const nodes = [
       { id: 0, label: "AI Alignment",            desc: "The central problem: how do we build AI systems that reliably pursue goals we actually want?", x: 400, y: 260, fixed: true },
       { id: 1, label: "Philosophy of Mind",       desc: "What is cognition? Consciousness? Understanding? The oldest questions are now the most urgent.", x: 220, y: 140 },
@@ -687,6 +791,7 @@
     const svg = document.getElementById('graph-svg');
     const canvas = document.getElementById('map-canvas');
     const tooltip = document.getElementById('tooltip');
+    const themeColors = getThemeColors();
     const W = canvas.offsetWidth || 760;
     const H = canvas.offsetHeight || 520;
 
@@ -710,7 +815,7 @@
 
     edges.forEach(([a,b]) => {
       const line = document.createElementNS(NS, 'line');
-      line.setAttribute('stroke', 'rgba(250,249,247,0.15)');
+      line.setAttribute('stroke', themeColors.edge);
       line.setAttribute('stroke-width', '1');
       svg.appendChild(line);
       edgeEls.push({ el: line, a, b });
@@ -722,8 +827,8 @@
 
       const circle = document.createElementNS(NS, 'circle');
       circle.setAttribute('r', i === 0 ? '12' : '6');
-      circle.setAttribute('fill', i === 0 ? '#faf9f7' : '#0a0a0a');
-      circle.setAttribute('stroke', '#faf9f7');
+      circle.setAttribute('fill', i === 0 ? themeColors.strong : themeColors.empty);
+      circle.setAttribute('stroke', themeColors.strong);
       circle.setAttribute('stroke-width', i === 0 ? '2' : '1.5');
       g.appendChild(circle);
 
@@ -731,7 +836,7 @@
       text.textContent = n.label;
       text.setAttribute('text-anchor', 'middle');
       text.setAttribute('dy', i === 0 ? '-16' : '-12');
-      text.setAttribute('fill', '#faf9f7');
+      text.setAttribute('fill', themeColors.strong);
       text.style.fontFamily = '"Times New Roman", serif';
       text.style.fontSize = i === 0 ? '14px' : '11px';
       text.style.fontWeight = i === 0 ? 'bold' : 'normal';
@@ -752,11 +857,12 @@
       g.addEventListener('touchstart', e => { dragging = true; ox = e.touches[0].clientX - n.x; oy = e.touches[0].clientY - n.y; }, { passive: true });
 
       g.addEventListener('mouseenter', () => {
+        const colors = getThemeColors();
         const connected = new Set();
         edges.forEach(([a,b]) => { if(a===i) connected.add(b); if(b===i) connected.add(a); });
         edgeEls.forEach(({ el, a, b }) => {
-          if (a===i||b===i) { el.setAttribute('stroke','rgba(250,249,247,0.8)'); el.setAttribute('stroke-width','1.5'); }
-          else { el.setAttribute('stroke','rgba(250,249,247,0.04)'); }
+          if (a===i||b===i) { el.setAttribute('stroke', colors.edgeBright); el.setAttribute('stroke-width','1.5'); }
+          else { el.setAttribute('stroke', colors.edgeDim); }
         });
         nodeEls.forEach((nel, j) => {
           if (j!==i && !connected.has(j)) { nel.querySelector('circle').setAttribute('opacity','0.3'); labelEls[j].setAttribute('opacity','0.3'); }
@@ -766,7 +872,8 @@
       });
 
       g.addEventListener('mouseleave', () => {
-        edgeEls.forEach(({ el }) => { el.setAttribute('stroke','rgba(250,249,247,0.15)'); el.setAttribute('stroke-width','1'); });
+        const colors = getThemeColors();
+        edgeEls.forEach(({ el }) => { el.setAttribute('stroke', colors.edge); el.setAttribute('stroke-width','1'); });
         nodeEls.forEach(nel => nel.querySelector('circle').setAttribute('opacity','1'));
         labelEls.forEach(l => l.setAttribute('opacity','1'));
         tooltip.classList.remove('visible');
@@ -828,6 +935,7 @@
     let lockedEntry = null;
 
     function highlightNodes(nodeIds, softIds = []) {
+      const colors = getThemeColors();
       const active = new Set(nodeIds.map(Number));
       const soft = new Set(softIds.map(Number));
       nodeEls.forEach((nel, j) => {
@@ -835,54 +943,59 @@
         const t = labelEls[j];
         if (active.has(j)) {
           c.setAttribute('opacity', '1');
-          c.setAttribute('fill', '#faf9f7');
+          c.setAttribute('fill', colors.strong);
           c.setAttribute('r', j === 0 ? '14' : '9');
           c.setAttribute('stroke-width', '2');
           t.setAttribute('opacity', '1');
           t.style.fontWeight = 'bold';
         } else if (soft.has(j)) {
           c.setAttribute('opacity', '1');
-          c.setAttribute('fill', 'rgba(250,249,247,0.55)');
+          c.setAttribute('fill', colors.softFill);
           c.setAttribute('r', j === 0 ? '12' : '7');
           c.setAttribute('stroke-width', '1.5');
           t.setAttribute('opacity', '0.75');
           t.style.fontWeight = 'normal';
         } else {
-          c.setAttribute('opacity', '0.12');
-          c.setAttribute('fill', '#0a0a0a');
+          c.setAttribute('opacity', colors.fadedOpacity);
+          c.setAttribute('fill', colors.empty);
           c.setAttribute('r', j === 0 ? '12' : '6');
-          t.setAttribute('opacity', '0.12');
+          t.setAttribute('opacity', colors.fadedOpacity);
           t.style.fontWeight = 'normal';
         }
       });
       edgeEls.forEach(({ el, a, b }) => {
         if (active.has(a) && active.has(b)) {
-          el.setAttribute('stroke', 'rgba(250,249,247,0.8)');
+          el.setAttribute('stroke', colors.edgeBright);
           el.setAttribute('stroke-width', '1.5');
         } else if ((active.has(a) || soft.has(a)) && (active.has(b) || soft.has(b))) {
-          el.setAttribute('stroke', 'rgba(250,249,247,0.35)');
+          el.setAttribute('stroke', colors.edgeSoft);
           el.setAttribute('stroke-width', '1');
         } else {
-          el.setAttribute('stroke', 'rgba(250,249,247,0.04)');
+          el.setAttribute('stroke', colors.edgeDim);
         }
       });
     }
 
     function resetNodes() {
+      const colors = getThemeColors();
       nodeEls.forEach((nel, j) => {
         const c = nel.querySelector('circle');
         c.setAttribute('opacity', '1');
-        c.setAttribute('fill', j === 0 ? '#faf9f7' : '#0a0a0a');
+        c.setAttribute('fill', j === 0 ? colors.strong : colors.empty);
+        c.setAttribute('stroke', colors.strong);
         c.setAttribute('r', j === 0 ? '12' : '6');
         c.setAttribute('stroke-width', j === 0 ? '2' : '1.5');
         labelEls[j].setAttribute('opacity', '1');
+        labelEls[j].setAttribute('fill', colors.strong);
         labelEls[j].style.fontWeight = j === 0 ? 'bold' : 'normal';
       });
       edgeEls.forEach(({ el }) => {
-        el.setAttribute('stroke', 'rgba(250,249,247,0.15)');
+        el.setAttribute('stroke', colors.edge);
         el.setAttribute('stroke-width', '1');
       });
     }
+
+    syncGraphTheme = resetNodes;
 
     timelineItems.forEach(item => {
       const nodeIds = item.dataset.nodes.split(',').map(Number);
