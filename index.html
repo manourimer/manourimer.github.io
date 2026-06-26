@@ -84,11 +84,14 @@
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .theme-toggle {
+    .theme-controls {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 10;
+    }
+
+    .theme-toggle {
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.08em;
@@ -139,6 +142,8 @@
     nav {
       display: flex;
       gap: 28px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
@@ -266,30 +271,6 @@
       line-height: 1.6;
     }
 
-    /* ── OTHER WORK ── */
-    .other-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .other-btn {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      border: 1px solid var(--ink-faint);
-      padding: 12px 24px;
-      transition: color 0.15s, border-color 0.15s;
-      display: inline-block;
-    }
-
-    .other-btn:hover {
-      color: var(--ink);
-      border-color: var(--ink);
-    }
-
     /* ── WRITING ── */
     .writing-stream {
       margin-bottom: 48px;
@@ -309,10 +290,7 @@
     }
 
     .writing-item {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
+      display: block;
       padding: 14px 0;
       border-bottom: 1px solid var(--ink-faint);
       transition: color 0.15s;
@@ -322,6 +300,21 @@
 
     .writing-title {
       font-size: 16px;
+    }
+
+    .writing-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .writing-desc {
+      color: var(--ink-muted);
+      font-size: 13px;
+      line-height: 1.55;
+      margin-top: 3px;
+      max-width: 560px;
     }
 
     .writing-date {
@@ -539,11 +532,18 @@
     @media (max-width: 600px) {
       :root { --gutter: 20px; }
       header { flex-direction: column; gap: 16px; }
-      .theme-toggle {
+      .theme-controls {
         top: 12px;
         right: 12px;
+      }
+      .theme-toggle {
         font-size: 9px;
         padding: 5px 8px;
+      }
+      .writing-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
       }
       .selected-grid { grid-template-columns: 1fr; }
       .footer-links { align-items: flex-start; }
@@ -553,7 +553,9 @@
 <body>
 
   <div class="hero-block">
-  <button class="theme-toggle" type="button" aria-pressed="false">Light mode</button>
+  <div class="theme-controls" aria-label="Color theme">
+    <button class="theme-toggle" type="button" aria-pressed="false">#FFFE3D</button>
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -563,8 +565,10 @@
     </span>
     <nav>
       <a href="#selected">Selected</a>
+      <a href="#research">Research</a>
       <a href="#writing">Writing</a>
       <a href="#timeline">Timeline</a>
+      <a href="#fun">Fun</a>
     </nav>
   </header>
 
@@ -607,6 +611,27 @@
     </div>
   </section>
 
+  <!-- RESEARCH PROJECTS -->
+  <section id="research">
+    <p class="section-label">Research Projects</p>
+    <div class="writing-stream">
+      <a class="writing-item" href="https://github.com/manourimer/nla_reliability" target="_blank">
+        <span class="writing-row">
+          <span class="writing-title">NLA Reliability</span>
+          <span class="writing-date">GitHub ↗</span>
+        </span>
+        <span class="writing-desc">Experiments on reliability, behavioral evaluation, and how model outputs hold up under pressure.</span>
+      </a>
+      <div class="writing-item">
+        <span class="writing-row">
+          <span class="writing-title">Persona Vectors</span>
+          <span class="writing-date">In progress</span>
+        </span>
+        <span class="writing-desc">A project on representing and steering model personas through latent directions in activation space.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- WRITING -->
   <section id="writing">
     <p class="section-label">Writing</p>
@@ -614,42 +639,39 @@
     <div class="writing-stream">
       <p class="stream-title">Essays</p>
       <a class="writing-item" href="OracleAIPaper.pdf">
-        <span class="writing-title">Loss of Agency to the Oracle AI</span>
-        <span class="writing-date">2026</span>
+        <span class="writing-row">
+          <span class="writing-title">Loss of Agency to the Oracle AI</span>
+          <span class="writing-date">2026</span>
+        </span>
+        <span class="writing-desc">On Oracle AI architectures and the alignment risks of constraining agency without constraining values.</span>
       </a>
     </div>
 
     <div class="writing-stream">
       <p class="stream-title">Fiction</p>
       <a class="writing-item" href="TheBlackBox.pdf">
-        <span class="writing-title">The Black Box</span>
-        <span class="writing-date">2026</span>
+        <span class="writing-row">
+          <span class="writing-title">The Black Box</span>
+          <span class="writing-date">2026</span>
+        </span>
+        <span class="writing-desc">A short story on the AI-in-a-box thought experiment and the fantasy of containment.</span>
       </a>
       <a class="writing-item" href="TheDayDeathDied.pdf">
-        <span class="writing-title">The Day Death Died</span>
-        <span class="writing-date">2026</span>
+        <span class="writing-row">
+          <span class="writing-title">The Day Death Died</span>
+          <span class="writing-date">2026</span>
+        </span>
+        <span class="writing-desc">A speculative story about mortality, rupture, and what changes when an ending disappears.</span>
       </a>
       <a class="writing-item" href="TheRain.pdf">
-        <span class="writing-title">The Rain</span>
-        <span class="writing-date">2026</span>
+        <span class="writing-row">
+          <span class="writing-title">The Rain</span>
+          <span class="writing-date">2026</span>
+        </span>
+        <span class="writing-desc">A short fiction piece about weather, memory, and atmosphere as a kind of thought.</span>
       </a>
     </div>
 
-    <div class="writing-stream">
-      <p class="stream-title">Sardine Reviews <span style="font-style:italic;font-family:var(--serif);font-size:13px;color:var(--ink-muted);margin-left:8px;">(pseudo-philosophical musings)</span></p>
-      <a class="writing-item" href="https://open.substack.com/pub/manourimer/p/review-4-mackerel-in-olive-oil?r=46t5el&utm_campaign=post&utm_medium=web" target="_blank">
-        <span class="writing-title">Mackerel in Olive Oil, Something Different, Something Beautiful.</span>
-        <span class="writing-date">Substack ↗</span>
-      </a>
-      <a class="writing-item" href="https://open.substack.com/pub/manourimer/p/review-3-sardines-with-tomato?r=46t5el&utm_campaign=post&utm_medium=web" target="_blank">
-        <span class="writing-title">Sardines With Tomato, Finding the Threads of Beauty Remaining Within the Corruption of Something Which was Once Sublime.</span>
-        <span class="writing-date">Substack ↗</span>
-      </a>
-      <a class="writing-item" href="https://open.substack.com/pub/manourimer/p/sardine-review-2-grilled-sardines?r=46t5el&utm_campaign=post&utm_medium=web" target="_blank">
-        <span class="writing-title">Grilled Sardines with Roasted Peppers, A Quiet Bonfire in a Tropical Cove.</span>
-        <span class="writing-date">Substack ↗</span>
-      </a>
-    </div>
   </section>
 
   <!-- MAP + TIMELINE (linked) -->
@@ -710,12 +732,25 @@
     </div><!-- /grid -->
   </section>
 
-  <!-- OTHER WORK -->
-  <section id="other">
-    <p class="section-label">Other Work</p>
-    <div class="other-buttons">
-      <a class="other-btn" href="film/film.html">Film ↗</a>
-      <a class="other-btn" href="code/code.html">Creative Computing ↗</a>
+  <!-- FUN -->
+  <section id="fun">
+    <p class="section-label">Fun</p>
+    <div class="selected-grid">
+      <a class="selected-card" href="film/film.html">
+        <p class="selected-card-type">Film</p>
+        <p class="selected-card-title">Film Work</p>
+        <p class="selected-card-desc">Short films, visual experiments, and image-based storytelling.</p>
+      </a>
+      <a class="selected-card" href="code/code.html">
+        <p class="selected-card-type">Interactive</p>
+        <p class="selected-card-title">Creative Computing</p>
+        <p class="selected-card-desc">Interactive web pieces, mythic interfaces, and code as a creative medium.</p>
+      </a>
+      <a class="selected-card" href="https://substack.com/@manourimer" target="_blank">
+        <p class="selected-card-type">Substack</p>
+        <p class="selected-card-title">Sardine Reviews</p>
+        <p class="selected-card-desc">Pseudo-philosophical musings occasioned by fish, cans, oil, tomatoes, and other small portals.</p>
+      </a>
     </div>
   </section>
 
@@ -735,14 +770,107 @@
   <script>
   (function() {
     const themeToggle = document.querySelector('.theme-toggle');
+    const colorThemes = [
+      { theme: 'dark', code: '#0A0A0A', label: '#0A0A0A' },
+      { theme: 'light', code: '#FFFE3D', label: '#FFFE3D' },
+      { theme: 'light', code: '#AD0BE0', label: '#AD0BE' },
+      { theme: 'light', code: '#FACADE', label: '#FACADE' },
+      { theme: 'light', code: '#DEAD00', label: '#DEAD' },
+      { theme: 'light', code: '#AC1D00', label: '#AC1D' }
+    ];
     let syncGraphTheme = () => {};
+    let activeThemeIndex = 0;
 
-    function setTheme(theme) {
-      const isLight = theme === 'light';
+    function hexToRgb(hex) {
+      const value = hex.replace('#', '');
+      return {
+        r: parseInt(value.slice(0, 2), 16),
+        g: parseInt(value.slice(2, 4), 16),
+        b: parseInt(value.slice(4, 6), 16)
+      };
+    }
+
+    function rgbToHex({ r, g, b }) {
+      return '#' + [r, g, b].map(v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('').toUpperCase();
+    }
+
+    function mix(a, b, amount) {
+      const ca = hexToRgb(a);
+      const cb = hexToRgb(b);
+      return rgbToHex({
+        r: ca.r + (cb.r - ca.r) * amount,
+        g: ca.g + (cb.g - ca.g) * amount,
+        b: ca.b + (cb.b - ca.b) * amount
+      });
+    }
+
+    function luminance(hex) {
+      const { r, g, b } = hexToRgb(hex);
+      const channel = v => {
+        const c = v / 255;
+        return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+      };
+      return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b);
+    }
+
+    function applyAccent(accent) {
+      const root = document.documentElement;
+      const darkText = luminance(accent) > 0.45;
+      const ink = darkText ? '#0a0a0a' : '#faf9f7';
+      const muted = mix(ink, accent, darkText ? 0.38 : 0.45);
+      const faint = mix(ink, accent, darkText ? 0.78 : 0.72);
+      const panelHover = mix(accent, ink, darkText ? 0.05 : 0.18);
+      const mapBg = mix(accent, ink, darkText ? 0.05 : 0.12);
+      root.style.setProperty('--ink', ink);
+      root.style.setProperty('--ink-muted', muted);
+      root.style.setProperty('--ink-faint', faint);
+      root.style.setProperty('--paper', accent);
+      root.style.setProperty('--accent', ink);
+      root.style.setProperty('--panel-hover', panelHover);
+      root.style.setProperty('--hero-bg', accent);
+      root.style.setProperty('--hero-ink', ink);
+      root.style.setProperty('--hero-muted', muted);
+      root.style.setProperty('--hero-faint', faint);
+      root.style.setProperty('--hero-bio', mix(ink, accent, darkText ? 0.18 : 0.24));
+      root.style.setProperty('--body-secondary', mix(ink, accent, darkText ? 0.32 : 0.36));
+      root.style.setProperty('--tooltip-bg', ink);
+      root.style.setProperty('--tooltip-ink', accent);
+      root.style.setProperty('--map-bg', mapBg);
+      root.style.setProperty('--map-strong', ink);
+      root.style.setProperty('--map-empty', accent);
+      root.style.setProperty('--map-edge', mix(ink, accent, darkText ? 0.7 : 0.62));
+      root.style.setProperty('--map-edge-dim', mix(ink, accent, darkText ? 0.9 : 0.78));
+      root.style.setProperty('--map-edge-soft', mix(ink, accent, 0.5));
+      root.style.setProperty('--map-edge-bright', ink);
+      root.style.setProperty('--map-soft-fill', mix(ink, accent, 0.38));
+      root.style.setProperty('--map-faded-opacity', darkText ? '0.28' : '0.34');
+    }
+
+    function clearAccent() {
+      [
+        '--ink', '--ink-muted', '--ink-faint', '--paper', '--accent', '--panel-hover',
+        '--hero-bg', '--hero-ink', '--hero-muted', '--hero-faint', '--hero-bio',
+        '--body-secondary', '--tooltip-bg', '--tooltip-ink', '--map-bg', '--map-strong',
+        '--map-empty', '--map-edge', '--map-edge-dim', '--map-edge-soft',
+        '--map-edge-bright', '--map-soft-fill', '--map-faded-opacity'
+      ].forEach(name => document.documentElement.style.removeProperty(name));
+    }
+
+    function setTheme(index) {
+      activeThemeIndex = index;
+      const selected = colorThemes[activeThemeIndex];
+      const isLight = selected.theme === 'light';
       document.documentElement.dataset.theme = isLight ? 'light' : '';
-      themeToggle.textContent = isLight ? 'Dark mode' : 'Light mode';
+      if (isLight) applyAccent(selected.code);
+      else clearAccent();
+      themeToggle.textContent = selected.label;
       themeToggle.setAttribute('aria-pressed', String(isLight));
-      try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (error) {}
+      try {
+        localStorage.setItem('themeIndex', String(activeThemeIndex));
+        localStorage.setItem('theme', selected.theme);
+        localStorage.setItem('themeAccent', selected.code);
+        localStorage.setItem('themeLabel', selected.label);
+      } catch (error) {}
       syncGraphTheme();
     }
 
@@ -760,11 +888,14 @@
       };
     }
 
-    let savedTheme = 'dark';
-    try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (error) {}
-    setTheme(savedTheme);
+    let savedIndex = 0;
+    try {
+      savedIndex = Number(localStorage.getItem('themeIndex') || '0');
+    } catch (error) {}
+    if (!Number.isInteger(savedIndex) || savedIndex < 0 || savedIndex >= colorThemes.length) savedIndex = 0;
+    setTheme(savedIndex);
     themeToggle.addEventListener('click', () => {
-      setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
+      setTheme((activeThemeIndex + 1) % colorThemes.length);
     });
 
     const nodes = [
