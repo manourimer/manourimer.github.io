@@ -712,7 +712,7 @@
             </div>
           </div>
         </div>
-        <div class="timeline-item" data-nodes="2,7,6,5" style="cursor:pointer;">
+        <div class="timeline-item" data-nodes="2,6,5" style="cursor:pointer;">
           <p class="timeline-year">Sophomore year</p>
           <p class="timeline-title">Symbolic Systems &amp; HCI</p>
           <div class="timeline-expandable">
@@ -724,13 +724,14 @@
             </div>
           </div>
         </div>
-        <div class="timeline-item" data-nodes="0,1,2,3,5" data-soft="4,6,7" style="cursor:pointer;">
+        <div class="timeline-item" data-nodes="0,1,2,3,4,5,6" data-soft="" style="cursor:pointer;">
           <p class="timeline-year">Junior year — now</p>
           <p class="timeline-title">AI Safety</p>
           <div class="timeline-expandable">
             <p class="timeline-desc">The philosophical questions I've always cared about — mind, meaning, control — are now urgent engineering problems. Studying Symbolic Systems &amp; AI, working toward alignment, writing through it.</p>
             <div class="reading-list">
-              <span class="reading-item">Casper — Achilles Heels for AGI/ASI via Decision Theoretic Adversaries</span>
+              <span class="reading-item">Lindsey et al. — The Persona Selection Model: Why AI Assistants might Behave like Humans</span>
+              <span class="reading-item">Cloud et al. — Subliminal Learning: Language models transmit behavioral traits via hidden signals in data</span>
               <span class="reading-item">Kokotajlo et al. — AI 2027</span>
             </div>
           </div>
@@ -904,24 +905,22 @@
     });
 
     const nodes = [
-      { id: 0, label: "Artificial Minds",         desc: "The central problem: where model behavior, social impact, and moral status converge ", x: 400, y: 260, fixed: true },
+      { id: 0, label: "Artificial Minds",         desc: "The central problem: where model behavior, social impact, and moral status converge.", x: 400, y: 260, fixed: true },
       { id: 1, label: "Philosophy of Mind",       desc: "What is cognition? Consciousness? Understanding? The oldest questions are now the most urgent.", x: 220, y: 140 },
       { id: 2, label: "Symbolic Systems",         desc: "The interdiscipline: CS, linguistics, philosophy, cognitive science.", x: 260, y: 300 },
       { id: 3, label: "Ethics",                   desc: "The only field of study which focuses on describing how the world ought to be instead of describing how it is.", x: 560, y: 300 },
       { id: 4, label: "Narrative & Storytelling", desc: "Stories as moral technology. How narrative shapes intuition and values.", x: 400, y: 380 },
       { id: 5, label: "Computer Science",         desc: "The act of making thought executable.", x: 100, y: 400 },
       { id: 6, label: "Creative Computing",       desc: "Code as artistic medium. Thinking about how the systems we build affect the user.", x: 560, y: 370 },
-      { id: 7, label: "Esotericism",              desc: "The philosophy of the occult and what it shares with philosophy of mind.", x: 100, y: 320 },
     ];
 
     const edges = [
-      [0,1],[0,2],[0,3],[0,4],[0,5],
-      [1,2],[1,3],[1,7],
-      [2,5],[2,7],
+      [0,1],[0,2],[0,3],[0,4],[0,5], [0, 6],
+      [1,2],[1,3],
+      [2,5],
       [3,4],
       [4,6],
       [5,6],
-      [7,2],
     ];
 
     const svg = document.getElementById('graph-svg');
